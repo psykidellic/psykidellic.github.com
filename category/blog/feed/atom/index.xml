@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+   >
+  <title type="text">psykidellic's blog</title>
+  <subtitle type="text">everything in general</subtitle>
+
+  <updated>2011-10-14T16:42:17Z</updated>
+  <generator uri="http://blogofile.com/">Blogofile</generator>
+
+  <link rel="alternate" type="text/html" href="http://blog.riteshn.com/" />
+  <id>http://blog.riteshn.com//feed/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://blog.riteshn.com//feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://blog.riteshn.com/</uri>
+    </author>
+    <title type="html"><![CDATA[Blog moved to Blogofile - add Google Analytics]]></title>
+    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics" />
+    <id>http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics</id>
+    <updated>2011-06-07T22:43:00Z</updated>
+    <published>2011-06-07T22:43:00Z</published>
+    <category scheme="http://blog.riteshn.com/" term="blog" />
+    <summary type="html"><![CDATA[Blog moved to Blogofile - add Google Analytics]]></summary>
+    <content type="html" xml:base="http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics"><![CDATA[<div class="document">
+<p>As a continuation from my last post, listed below are the other two changes that I have applied to my setup.</p>
+<div class="section" id="vaporfile-fix">
+<h1>Vaporfile fix</h1>
+<p>As you would know, I am using <a class="reference external" href="http://aws.amazon.com/s3/">Amazon S3</a> for this blog. I also use the excellent vaporfile script. After updating the second post yesterday, I found a bug with the script. After it updates an existing file (after matching the checksums), vaporfile fails to set the permission correctly. This results in <tt class="docutils literal">index.html</tt> to have incorrect access permission and you end up getting AccessDenied from Amazon when you try to access your blog.</p>
+<p>After around 20 minutes of investigation, I found the error and the patch is available at <a class="reference external" href="https://github.com/psykidellic/Vaporfile/commit/0a866ad8715bb4267d6ee4f5672764f4e54b7e8a">my fork of the project</a>.</p>
+<div class="section" id="addition-of-google-analytics">
+<h2>Addition of Google Analytics</h2>
+<p>Apart from Disqus, I believe Google Analytics is probably the next feature that almost everybody uses. I plan to submit this patch to Blogofile in coming days but you just need to add the following to <tt class="docutils literal">_config.py</tt>:</p>
+
+
+<div class="pygments_murphy"><pre><span class="c">### Google analytics integration</span>
+<span class="n">blog</span><span class="o">.</span><span class="n">analytics</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="c">#### enter your &#39;web property id&#39; here</span>
+<span class="n">blog</span><span class="o">.</span><span class="n">analytics</span><span class="o">.</span><span class="n">id</span>    <span class="o">=</span> <span class="s">&quot;UA-XXXXXX-6&quot;</span>
+</pre></div>
+
+
+
+<p>and to <tt class="docutils literal">footer.mako</tt>:</p>
+
+
+<div class="pygments_murphy"><pre>% if bf.config.blog.analytics.enabled:
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+
+  <span class="kd">var</span> <span class="nx">_gaq</span> <span class="o">=</span> <span class="nx">_gaq</span> <span class="o">||</span> <span class="p">[];</span>
+  <span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_setAccount&#39;</span><span class="p">,</span> <span class="s1">&#39;${bf.config.blog.analytics.id}&#39;</span><span class="p">]);</span>
+  <span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_trackPageview&#39;</span><span class="p">]);</span>
+
+  <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span> <span class="nx">ga</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span> <span class="nx">ga</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https:&#39;</span> <span class="o">==</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s1">&#39;https://ssl&#39;</span> <span class="o">:</span> <span class="s1">&#39;http://www&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.google-analytics.com/ga.js&#39;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">ga</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
+  <span class="p">})();</span>
+
+<span class="nt">&lt;/script&gt;</span>
+% endif
+</pre></div>
+
+
+
+</div>
+</div>
+</div>
+]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://blog.riteshn.com/</uri>
+    </author>
+    <title type="html"><![CDATA[Blog moved to Blogofile]]></title>
+    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2011/06/02/blog-moved-to-blogofile" />
+    <id>http://blog.riteshn.com/2011/06/02/blog-moved-to-blogofile</id>
+    <updated>2011-06-02T18:55:00Z</updated>
+    <published>2011-06-02T18:55:00Z</published>
+    <category scheme="http://blog.riteshn.com/" term="blog" />
+    <summary type="html"><![CDATA[Blog moved to Blogofile]]></summary>
+    <content type="html" xml:base="http://blog.riteshn.com/2011/06/02/blog-moved-to-blogofile"><![CDATA[<div class="document">
+<p><strong>tl;dr</strong> I would have saved couple of hours by just reading the mailing list.</p>
+<p>The following post is very much inspired by <a class="reference external" href="http://techspot.zzzeek.org/2010/12/06/my-blogofile-hacks/">this entry</a>. To get the blog up, I used <tt class="docutils literal">blogofile init simple_blog</tt> generating a minimal setup with no themes worked. I spent some time figuring out how to make my index page similar to chronological page. The docs was lacking on this part and in my eagerness, I went ahead and updated <tt class="docutils literal">index.html.mako</tt> with code from <tt class="docutils literal">chronological.mako</tt>. Realizing that its a criminal duplication of code, I was convinced that there has to be a better way. Quick walk through the mailing list pointed me to the <a class="reference external" href="http://groups.google.com/group/blogofile-discuss/browse_thread/thread/292c32bfe35b8466">following conversation</a>. Unfortunately, contrary to what is mentioned in the list, I had to set <strong>blog.path = &quot;&quot;</strong> in my <tt class="docutils literal">_config.py</tt>. Otherwise, all the links become <strong>http://page/1</strong> instead of <strong>http://MYHOST/page/1</strong>.</p>
+<p>Setting up syntax highlighting for code samples using Pygments turned out to be more work then expected. It seemed after <a class="reference external" href="http://www.blogofile.com/demo/sample_posts.html">reading</a> and this post by <a class="reference external" href="http://morgangoose.com/blog/2010/09/28/switching-to-blogofile/">Morgan Goose</a> led me to think that syntax highlighting will be automatically enabled. Unfortunately, it was not to be. I had to update the config file with (this options are present if you init blogofile.com):</p>
+
+
+<div class="pygments_murphy"><pre><span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">style</span>   <span class="o">=</span> <span class="s">&quot;murphy&quot;</span>
+<span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">css_dir</span> <span class="o">=</span> <span class="s">&quot;/css&quot;</span>
+<span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">preload_styles</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;murphy&quot;</span><span class="p">]</span>
+
+<span class="n">blog</span><span class="o">.</span><span class="n">post_default_filters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;rst&quot;</span><span class="p">:</span> <span class="s">&quot;rst, syntax_highlight&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+
+
+<p>Apart from the above change, I also liked zzzeek's changes to the <tt class="docutils literal">syntax_highlight.py</tt> which enables me write code samples using <tt class="docutils literal">#!python</tt> directive. Lets face some facts - it will be sometime before I post anything other than Python.</p>
+<p>Next step is to get yourself registered with <a class="reference external" href="http://www.disqus.com">Disqus</a> and setup Blogofile by adding to the config file:</p>
+
+
+<div class="pygments_murphy"><pre><span class="n">blog</span><span class="o">.</span><span class="n">disqus</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">blog</span><span class="o">.</span><span class="n">disqus</span><span class="o">.</span><span class="n">name</span>    <span class="o">=</span> <span class="s">&quot;YOUR-DISQUS-APPNAME&quot;</span>
+</pre></div>
+
+
+
+<p>As a side note, if you are using <tt class="docutils literal">VIRTUALENV</tt> along with blogofile, do not forget to start your environment name with <tt class="docutils literal">_</tt>. Otherwise, blogofile will simply copy it to _site and it will get synced to your remote folder. I just use <tt class="docutils literal">_ENV</tt> instead of <tt class="docutils literal">ENV</tt>.</p>
+</div>
+]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://blog.riteshn.com/</uri>
+    </author>
+    <title type="html"><![CDATA[Welcome Back]]></title>
+    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2011/05/27/welcome-back" />
+    <id>http://blog.riteshn.com/2011/05/27/welcome-back</id>
+    <updated>2011-05-27T15:22:00Z</updated>
+    <published>2011-05-27T15:22:00Z</published>
+    <category scheme="http://blog.riteshn.com/" term="blog" />
+    <summary type="html"><![CDATA[Welcome Back]]></summary>
+    <content type="html" xml:base="http://blog.riteshn.com/2011/05/27/welcome-back"><![CDATA[<div class="document">
+<p>To get a diff. Test again. Test again. Again and again. There has to be a better way. Dasdasdo dil. dekho. Deklho. Bah!asdasdasdasd</p>
+</div>
+]]></content>
+  </entry>
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://blog.riteshn.com/</uri>
+    </author>
+    <title type="html"><![CDATA[Welcome Back]]></title>
+    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2011/05/27/welcome-back" />
+    <id>http://blog.riteshn.com/2011/05/27/welcome-back</id>
+    <updated>2011-05-27T15:22:00Z</updated>
+    <published>2011-05-27T15:22:00Z</published>
+    <category scheme="http://blog.riteshn.com/" term="blog" />
+    <summary type="html"><![CDATA[Welcome Back]]></summary>
+    <content type="html" xml:base="http://blog.riteshn.com/2011/05/27/welcome-back"><![CDATA[<div class="document">
+<p>Hello, after a long hiatus and multiple attempts to get back to blogging, I think the time ripe is to take another attempt. Recently, I read <a class="reference external" href="http://techspot.zzzeek.org/2010/11/21/how-coders-blog/">a great article</a> by zzzeek which made a lot of sense. It seems that blogging would me much fun using the said workflow. Another <a class="reference external" href="http://buffered.io/2011/02/15/now-powered-by-blogofile/">blog post</a> pointed out similar issues that I was having with my old Wordpress blog. It was just too much effort to login to your Wordpress account to even note down your thoughts as draft. Agreed, one can keep a folder of drafts in your personal code repository but lets face the fact - the path is just not smooth as we would like it to be.</p>
+<p>This blog is generated using <a class="reference external" href="http://www.blogofile.com/">Blogofile</a> and is hosted on Amazon S3 using the excellent <a class="reference external" href="http://blogofile.com/blog/2011/02/19/blogofile-on-amazon-s3/">Vaporfile</a> script. In my attempt to learn refresh my CSS knowledge, I have decided to have my own design. I will have another post soon describing the steps and custom modification I did to get the present setup.</p>
+</div>
+]]></content>
+  </entry>
+</feed>

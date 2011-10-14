@@ -1,0 +1,173 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    
+  <title>psykidellic's blog</title>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed" />
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feed/atom" />
+<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
+<link rel='stylesheet' href='/css/site.css' type='text/css' />
+
+
+  </head>
+  <body>
+    <div id="content">
+      <div id="header">
+      	
+  <h1><a href="/">psykidellic's blog</a></h1>
+<h2>everything in general</h2>
+
+
+	  </div>
+      <div id="main">
+          
+
+<a class="prev" href="http://blog.riteshn.com/2011/06/02/blog-moved-to-blogofile">Blog moved to Blogofile</a>
+<a class="next" href="http://blog.riteshn.com/2011/06/08/finding-an-item-based-on-computed-value">Finding an item based on computed value</a>
+
+<div class="blog_post">
+
+  <div class="blog_post_header">
+    <a name="blog-moved-to-blogofile---add-google-analytics"></a>
+    <h1><a href="/2011/06/07/blog-moved-to-blogofile---add-google-analytics" rel="bookmark" title="Permanent Link to Blog moved to Blogofile - add Google Analytics">Blog moved to Blogofile - add Google Analytics</a></h1>
+    <h3>June 07, 2011 at 10:43 PM | Categories: 
+        
+        <a href='/category/blog'>blog</a>
+        | <a href="http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics#disqus_thread">View Comments</a>
+</h3>
+</div>
+  <div class="blog_prose">
+    
+  <div class="document">
+<p>As a continuation from my last post, listed below are the other two changes that I have applied to my setup.</p>
+<div class="section" id="vaporfile-fix">
+<h1>Vaporfile fix</h1>
+<p>As you would know, I am using <a class="reference external" href="http://aws.amazon.com/s3/">Amazon S3</a> for this blog. I also use the excellent vaporfile script. After updating the second post yesterday, I found a bug with the script. After it updates an existing file (after matching the checksums), vaporfile fails to set the permission correctly. This results in <tt class="docutils literal">index.html</tt> to have incorrect access permission and you end up getting AccessDenied from Amazon when you try to access your blog.</p>
+<p>After around 20 minutes of investigation, I found the error and the patch is available at <a class="reference external" href="https://github.com/psykidellic/Vaporfile/commit/0a866ad8715bb4267d6ee4f5672764f4e54b7e8a">my fork of the project</a>.</p>
+<div class="section" id="addition-of-google-analytics">
+<h2>Addition of Google Analytics</h2>
+<p>Apart from Disqus, I believe Google Analytics is probably the next feature that almost everybody uses. I plan to submit this patch to Blogofile in coming days but you just need to add the following to <tt class="docutils literal">_config.py</tt>:</p>
+
+
+<div class="pygments_murphy"><pre><span class="c">### Google analytics integration</span>
+<span class="n">blog</span><span class="o">.</span><span class="n">analytics</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="c">#### enter your &#39;web property id&#39; here</span>
+<span class="n">blog</span><span class="o">.</span><span class="n">analytics</span><span class="o">.</span><span class="n">id</span>    <span class="o">=</span> <span class="s">&quot;UA-XXXXXX-6&quot;</span>
+</pre></div>
+
+
+
+<p>and to <tt class="docutils literal">footer.mako</tt>:</p>
+
+
+<div class="pygments_murphy"><pre>% if bf.config.blog.analytics.enabled:
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+
+  <span class="kd">var</span> <span class="nx">_gaq</span> <span class="o">=</span> <span class="nx">_gaq</span> <span class="o">||</span> <span class="p">[];</span>
+  <span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_setAccount&#39;</span><span class="p">,</span> <span class="s1">&#39;${bf.config.blog.analytics.id}&#39;</span><span class="p">]);</span>
+  <span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_trackPageview&#39;</span><span class="p">]);</span>
+
+  <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span> <span class="nx">ga</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span> <span class="nx">ga</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nx">ga</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https:&#39;</span> <span class="o">==</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s1">&#39;https://ssl&#39;</span> <span class="o">:</span> <span class="s1">&#39;http://www&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.google-analytics.com/ga.js&#39;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">ga</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
+  <span class="p">})();</span>
+
+<span class="nt">&lt;/script&gt;</span>
+% endif
+</pre></div>
+
+
+
+</div>
+</div>
+</div>
+
+
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_url = "http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics";
+</script>
+<script type="text/javascript" src="http://disqus.com/forums/psykidellic-blog/embed.js"></script>
+<noscript><a href="http://psykidellic-blog.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div><!-- End Main Block -->
+      <div id="sidebar">
+		  
+  <h2>Me</h2>
+
+<ul>
+	<li><a href="https://bitbucket.org/psykidellic">Me @ BitBucket</a></li>
+	<li><a href="http://www.linkedin.com/profile/view?id=48147868>">Me @ LinkedIn</a></li>
+	<li><a href="http://twitter.com/psykidellic">Me @ Twitter</a></li>
+</ul>
+
+<br />
+
+<h2>Categories</h2>
+    <ul>
+     <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (4)</li>
+     <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (2)</li>
+    </ul>
+
+
+      </div>
+      <div id="footer">
+        
+  <hr/>
+  <p id="credits">
+Powered by <a href="http://www.blogofile.com">Blogofile</a>. RSS feeds for <a href="/feed">Entries</a>
+ and <a
+href="http://psykidellic-blog.disqus.com/latest.rss">Comments</a>
+<br>
+</p>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/psykidellic-blog/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-510639-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+

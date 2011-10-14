@@ -1,0 +1,158 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    
+  <title>psykidellic's blog</title>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed" />
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feed/atom" />
+<link rel='stylesheet' href='/css/pygments_murphy.css' type='text/css' />
+<link rel='stylesheet' href='/css/site.css' type='text/css' />
+
+
+  </head>
+  <body>
+    <div id="content">
+      <div id="header">
+      	
+  <h1><a href="/">psykidellic's blog</a></h1>
+<h2>everything in general</h2>
+
+
+	  </div>
+      <div id="main">
+          
+
+<a class="prev" href="http://blog.riteshn.com/2011/05/27/welcome-back">Welcome Back</a>
+<a class="next" href="http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics">Blog moved to Blogofile - add Google Analytics</a>
+
+<div class="blog_post">
+
+  <div class="blog_post_header">
+    <a name="blog-moved-to-blogofile"></a>
+    <h1><a href="/2011/06/02/blog-moved-to-blogofile" rel="bookmark" title="Permanent Link to Blog moved to Blogofile">Blog moved to Blogofile</a></h1>
+    <h3>June 02, 2011 at 06:55 PM | Categories: 
+        
+        <a href='/category/blog'>blog</a>
+        | <a href="http://blog.riteshn.com/2011/06/02/blog-moved-to-blogofile#disqus_thread">View Comments</a>
+</h3>
+</div>
+  <div class="blog_prose">
+    
+  <div class="document">
+<p><strong>tl;dr</strong> I would have saved couple of hours by just reading the mailing list.</p>
+<p>The following post is very much inspired by <a class="reference external" href="http://techspot.zzzeek.org/2010/12/06/my-blogofile-hacks/">this entry</a>. To get the blog up, I used <tt class="docutils literal">blogofile init simple_blog</tt> generating a minimal setup with no themes worked. I spent some time figuring out how to make my index page similar to chronological page. The docs was lacking on this part and in my eagerness, I went ahead and updated <tt class="docutils literal">index.html.mako</tt> with code from <tt class="docutils literal">chronological.mako</tt>. Realizing that its a criminal duplication of code, I was convinced that there has to be a better way. Quick walk through the mailing list pointed me to the <a class="reference external" href="http://groups.google.com/group/blogofile-discuss/browse_thread/thread/292c32bfe35b8466">following conversation</a>. Unfortunately, contrary to what is mentioned in the list, I had to set <strong>blog.path = &quot;&quot;</strong> in my <tt class="docutils literal">_config.py</tt>. Otherwise, all the links become <strong>http://page/1</strong> instead of <strong>http://MYHOST/page/1</strong>.</p>
+<p>Setting up syntax highlighting for code samples using Pygments turned out to be more work then expected. It seemed after <a class="reference external" href="http://www.blogofile.com/demo/sample_posts.html">reading</a> and this post by <a class="reference external" href="http://morgangoose.com/blog/2010/09/28/switching-to-blogofile/">Morgan Goose</a> led me to think that syntax highlighting will be automatically enabled. Unfortunately, it was not to be. I had to update the config file with (this options are present if you init blogofile.com):</p>
+
+
+<div class="pygments_murphy"><pre><span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">style</span>   <span class="o">=</span> <span class="s">&quot;murphy&quot;</span>
+<span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">css_dir</span> <span class="o">=</span> <span class="s">&quot;/css&quot;</span>
+<span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">preload_styles</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;murphy&quot;</span><span class="p">]</span>
+
+<span class="n">blog</span><span class="o">.</span><span class="n">post_default_filters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;rst&quot;</span><span class="p">:</span> <span class="s">&quot;rst, syntax_highlight&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+
+
+
+<p>Apart from the above change, I also liked zzzeek's changes to the <tt class="docutils literal">syntax_highlight.py</tt> which enables me write code samples using <tt class="docutils literal">#!python</tt> directive. Lets face some facts - it will be sometime before I post anything other than Python.</p>
+<p>Next step is to get yourself registered with <a class="reference external" href="http://www.disqus.com">Disqus</a> and setup Blogofile by adding to the config file:</p>
+
+
+<div class="pygments_murphy"><pre><span class="n">blog</span><span class="o">.</span><span class="n">disqus</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">blog</span><span class="o">.</span><span class="n">disqus</span><span class="o">.</span><span class="n">name</span>    <span class="o">=</span> <span class="s">&quot;YOUR-DISQUS-APPNAME&quot;</span>
+</pre></div>
+
+
+
+<p>As a side note, if you are using <tt class="docutils literal">VIRTUALENV</tt> along with blogofile, do not forget to start your environment name with <tt class="docutils literal">_</tt>. Otherwise, blogofile will simply copy it to _site and it will get synced to your remote folder. I just use <tt class="docutils literal">_ENV</tt> instead of <tt class="docutils literal">ENV</tt>.</p>
+</div>
+
+
+  </div>
+</div>
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_url = "http://blog.riteshn.com/2011/06/02/blog-moved-to-blogofile";
+</script>
+<script type="text/javascript" src="http://disqus.com/forums/psykidellic-blog/embed.js"></script>
+<noscript><a href="http://psykidellic-blog.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div><!-- End Main Block -->
+      <div id="sidebar">
+		  
+  <h2>Me</h2>
+
+<ul>
+	<li><a href="https://bitbucket.org/psykidellic">Me @ BitBucket</a></li>
+	<li><a href="http://www.linkedin.com/profile/view?id=48147868>">Me @ LinkedIn</a></li>
+	<li><a href="http://twitter.com/psykidellic">Me @ Twitter</a></li>
+</ul>
+
+<br />
+
+<h2>Categories</h2>
+    <ul>
+     <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (4)</li>
+     <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (2)</li>
+    </ul>
+
+
+      </div>
+      <div id="footer">
+        
+  <hr/>
+  <p id="credits">
+Powered by <a href="http://www.blogofile.com">Blogofile</a>. RSS feeds for <a href="/feed">Entries</a>
+ and <a
+href="http://psykidellic-blog.disqus.com/latest.rss">Comments</a>
+<br>
+</p>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/psykidellic-blog/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-510639-6']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      </div> <!-- End Footer -->
+    </div> <!-- End Content -->
+  </body>
+</html>
+
+
+
+
+
