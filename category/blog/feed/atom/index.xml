@@ -7,7 +7,7 @@
   <title type="text">psykidellic's blog</title>
   <subtitle type="text">everything in general</subtitle>
 
-  <updated>2011-10-14T19:30:59Z</updated>
+  <updated>2011-10-14T19:37:01Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://blog.riteshn.com/" />
@@ -111,23 +111,6 @@
 
 
 <p>As a side note, if you are using <tt class="docutils literal">VIRTUALENV</tt> along with blogofile, do not forget to start your environment name with <tt class="docutils literal">_</tt>. Otherwise, blogofile will simply copy it to _site and it will get synced to your remote folder. I just use <tt class="docutils literal">_ENV</tt> instead of <tt class="docutils literal">ENV</tt>.</p>
-</div>
-]]></content>
-  </entry>
-  <entry>
-    <author>
-      <name></name>
-      <uri>http://blog.riteshn.com/</uri>
-    </author>
-    <title type="html"><![CDATA[Welcome Back]]></title>
-    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2011/05/27/welcome-back" />
-    <id>http://blog.riteshn.com/2011/05/27/welcome-back</id>
-    <updated>2011-05-27T15:22:00Z</updated>
-    <published>2011-05-27T15:22:00Z</published>
-    <category scheme="http://blog.riteshn.com/" term="blog" />
-    <summary type="html"><![CDATA[Welcome Back]]></summary>
-    <content type="html" xml:base="http://blog.riteshn.com/2011/05/27/welcome-back"><![CDATA[<div class="document">
-<p>To get a diff. Test again. Test again. Again and again. There has to be a better way. Dasdasdo dil. dekho. Deklho. Bah!asdasdasdasd</p>
 </div>
 ]]></content>
   </entry>

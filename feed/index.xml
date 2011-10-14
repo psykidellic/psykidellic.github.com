@@ -10,7 +10,7 @@
     <title>psykidellic's blog</title>
     <link>http://blog.riteshn.com/</link>
     <description>everything in general</description>
-    <pubDate>Fri, 14 Oct 2011 19:30:59 GMT</pubDate>
+    <pubDate>Fri, 14 Oct 2011 19:37:01 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
@@ -171,18 +171,6 @@
 
 
 <p>As a side note, if you are using <tt class="docutils literal">VIRTUALENV</tt> along with blogofile, do not forget to start your environment name with <tt class="docutils literal">_</tt>. Otherwise, blogofile will simply copy it to _site and it will get synced to your remote folder. I just use <tt class="docutils literal">_ENV</tt> instead of <tt class="docutils literal">ENV</tt>.</p>
-</div>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Welcome Back</title>
-      <link>http://blog.riteshn.com/2011/05/27/welcome-back</link>
-      <pubDate>Fri, 27 May 2011 15:22:00 EDT</pubDate>
-      <category><![CDATA[blog]]></category>
-      <guid isPermaLink="true">http://blog.riteshn.com/2011/05/27/welcome-back</guid>
-      <description>Welcome Back</description>
-      <content:encoded><![CDATA[<div class="document">
-<p>To get a diff. Test again. Test again. Again and again. There has to be a better way. Dasdasdo dil. dekho. Deklho. Bah!asdasdasdasd</p>
 </div>
 ]]></content:encoded>
     </item>
