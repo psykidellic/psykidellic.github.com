@@ -31,6 +31,72 @@
 <div class="blog_post">
 
   <div class="blog_post_header">
+    <a name="git-rebase---needed-a-single-revison-and-interactive-rebase-already-started"></a>
+    <h1><a href="/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started" rel="bookmark" title="Permanent Link to git rebase - needed a single revison and interactive rebase already started">git rebase - needed a single revison and interactive rebase already started</a></h1>
+    <h3>October 18, 2011 at 06:55 PM | Categories: 
+        
+        <a href='/category/git'>git</a>
+        | <a href="http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started#disqus_thread">View Comments</a>
+</h3>
+</div>
+  <div class="blog_prose">
+    
+  <div class="document">
+<p>Recently at work, I was doing a <em>git rebase</em> and it failed due to some reason. After manually fixing it, I ran: <strong>git rebase --continue</strong> and it throws up:</p>
+
+
+<div class="pygments_murphy"><pre>fatal: needed a single revison
+</pre></div>
+
+
+
+<p>After browsing through the docs and StackOverflow reading up, I figured the best way is to look for point before the rebase or at a state where you know its good:</p>
+
+
+<div class="pygments_murphy"><pre>git reflog #look for the record e.g. {HEAD}@4
+git reset --hard {HEAD}@4
+</pre></div>
+
+
+
+<p>Then if you do:</p>
+
+
+<div class="pygments_murphy"><pre>git rebase --continue
+</pre></div>
+
+
+
+<p>and get:</p>
+
+
+<div class="pygments_murphy"><pre>Interactive rebase already started
+</pre></div>
+
+
+
+<p>the commands that worked for me:</p>
+
+
+<div class="pygments_murphy"><pre>git rebase -i --abort
+git rebase --continue
+</pre></div>
+
+
+
+</div>
+
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started#disqus_thread">Read and Post Comments</a></div>
+  
+<div class="blog_post">
+
+  <div class="blog_post_header">
     <a name="big-changes-and-using-blogofile-with-github-and-bitbucket"></a>
     <h1><a href="/2011/10/14/big-changes-and-using-blogofile-with-github-and-bitbucket" rel="bookmark" title="Permanent Link to Big changes and using blogofile with GitHub and BitBucket">Big changes and using blogofile with GitHub and BitBucket</a></h1>
     <h3>October 14, 2011 at 06:55 PM | Categories: 
@@ -82,6 +148,7 @@
 <h2>Categories</h2>
     <ul>
      <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (4)</li>
+     <li><a href="/category/git">git</a> (<a href="/category/git/feed">rss</a>) (1)</li>
      <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (1)</li>
     </ul>
 
