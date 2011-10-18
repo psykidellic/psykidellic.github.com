@@ -7,12 +7,70 @@
   <title type="text">psykidellic's blog</title>
   <subtitle type="text">everything in general</subtitle>
 
-  <updated>2011-10-18T06:27:12Z</updated>
+  <updated>2011-10-18T23:06:37Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://blog.riteshn.com/" />
   <id>http://blog.riteshn.com//feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://blog.riteshn.com//feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://blog.riteshn.com/</uri>
+    </author>
+    <title type="html"><![CDATA[git rebase - needed a single revison and interactive rebase already started]]></title>
+    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started" />
+    <id>http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started</id>
+    <updated>2011-10-18T18:55:00Z</updated>
+    <published>2011-10-18T18:55:00Z</published>
+    <category scheme="http://blog.riteshn.com/" term="git" />
+    <summary type="html"><![CDATA[git rebase - needed a single revison and interactive rebase already started]]></summary>
+    <content type="html" xml:base="http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started"><![CDATA[<div class="document">
+<p>Recently at work, I was doing a <em>git rebase</em> and it failed due to some reason. After manually fixing it, I ran: <strong>git rebase --continue</strong> and it throws up:</p>
+
+
+<div class="pygments_murphy"><pre>fatal: needed a single revison
+</pre></div>
+
+
+
+<p>After browsing through the docs and StackOverflow reading up, I figured the best way is to look for point before the rebase or at a state where you know its good:</p>
+
+
+<div class="pygments_murphy"><pre>git reflog #look for the record e.g. {HEAD}@4
+git reset --hard {HEAD}@4
+</pre></div>
+
+
+
+<p>Then if you do:</p>
+
+
+<div class="pygments_murphy"><pre>git rebase --continue
+</pre></div>
+
+
+
+<p>and get:</p>
+
+
+<div class="pygments_murphy"><pre>Interactive rebase already started
+</pre></div>
+
+
+
+<p>the commands that worked for me:</p>
+
+
+<div class="pygments_murphy"><pre>git rebase -i --abort
+git rebase --continue
+</pre></div>
+
+
+
+</div>
+]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>

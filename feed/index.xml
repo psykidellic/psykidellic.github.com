@@ -10,10 +10,63 @@
     <title>psykidellic's blog</title>
     <link>http://blog.riteshn.com/</link>
     <description>everything in general</description>
-    <pubDate>Tue, 18 Oct 2011 06:27:12 GMT</pubDate>
+    <pubDate>Tue, 18 Oct 2011 23:06:37 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>git rebase - needed a single revison and interactive rebase already started</title>
+      <link>http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started</link>
+      <pubDate>Tue, 18 Oct 2011 18:55:00 EDT</pubDate>
+      <category><![CDATA[git]]></category>
+      <guid isPermaLink="true">http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started</guid>
+      <description>git rebase - needed a single revison and interactive rebase already started</description>
+      <content:encoded><![CDATA[<div class="document">
+<p>Recently at work, I was doing a <em>git rebase</em> and it failed due to some reason. After manually fixing it, I ran: <strong>git rebase --continue</strong> and it throws up:</p>
+
+
+<div class="pygments_murphy"><pre>fatal: needed a single revison
+</pre></div>
+
+
+
+<p>After browsing through the docs and StackOverflow reading up, I figured the best way is to look for point before the rebase or at a state where you know its good:</p>
+
+
+<div class="pygments_murphy"><pre>git reflog #look for the record e.g. {HEAD}@4
+git reset --hard {HEAD}@4
+</pre></div>
+
+
+
+<p>Then if you do:</p>
+
+
+<div class="pygments_murphy"><pre>git rebase --continue
+</pre></div>
+
+
+
+<p>and get:</p>
+
+
+<div class="pygments_murphy"><pre>Interactive rebase already started
+</pre></div>
+
+
+
+<p>the commands that worked for me:</p>
+
+
+<div class="pygments_murphy"><pre>git rebase -i --abort
+git rebase --continue
+</pre></div>
+
+
+
+</div>
+]]></content:encoded>
+    </item>
     <item>
       <title>Big changes and using blogofile with GitHub and BitBucket</title>
       <link>http://blog.riteshn.com/2011/10/14/big-changes-and-using-blogofile-with-github-and-bitbucket</link>
