@@ -64,55 +64,6 @@
 
 
 
-<p><a class="reference external" href="http://articles.slicehost.com/2009/3/5/ubuntu-intrepid-nginx-configuration">http://articles.slicehost.com/2009/3/5/ubuntu-intrepid-nginx-configuration</a>
-<a class="reference external" href="http://articles.slicehost.com/2007/12/12/ubuntu-gutsy-nginx-config-layout">http://articles.slicehost.com/2007/12/12/ubuntu-gutsy-nginx-config-layout</a></p>
-<p><a class="reference external" href="http://www.directadmin.com/forum/archive/index.php/t-24452.html">http://www.directadmin.com/forum/archive/index.php/t-24452.html</a></p>
-</div>
-
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://blog.riteshn.com/2011/06/08/finding-an-item-based-on-computed-value#disqus_thread">Read and Post Comments</a></div>
-  
-<div class="blog_post">
-
-  <div class="blog_post_header">
-    <a name="finding-an-item-based-on-computed-value"></a>
-    <h1><a href="/2011/06/08/finding-an-item-based-on-computed-value" rel="bookmark" title="Permanent Link to Finding an item based on computed value">Finding an item based on computed value</a></h1>
-    <h3>June 08, 2011 at 12:20 AM | Categories: 
-        
-        <a href='/category/python'>python</a>
-        | <a href="http://blog.riteshn.com/2011/06/08/finding-an-item-based-on-computed-value#disqus_thread">View Comments</a>
-</h3>
-</div>
-  <div class="blog_prose">
-    
-  <div class="document">
-<p>Recently, at work I had to implement some code which had the pattern:</p>
-
-
-<div class="pygments_murphy"><pre><span class="n">found</span> <span class="o">=</span> <span class="bp">None</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">foo</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">baz</span><span class="p">:</span>
-                <span class="n">found</span> <span class="o">=</span> <span class="n">x</span>
-</pre></div>
-
-
-
-<p>One could do this in a more Pythonic way as:</p>
-
-
-<div class="pygments_murphy"><pre><span class="k">try</span><span class="p">:</span>
-    <span class="n">found</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">foo</span> <span class="k">if</span> <span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">baz</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
-    <span class="n">found</span> <span class="o">=</span> <span class="bp">None</span>
-</pre></div>
-
-
-
 </div>
 
 
@@ -138,8 +89,8 @@
 
 <h2>Categories</h2>
     <ul>
-     <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (3)</li>
-     <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (2)</li>
+     <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (4)</li>
+     <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (1)</li>
     </ul>
 
 

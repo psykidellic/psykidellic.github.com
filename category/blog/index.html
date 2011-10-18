@@ -31,6 +31,44 @@
 <div class="blog_post">
 
   <div class="blog_post_header">
+    <a name="big-changes-and-using-blogofile-with-github-and-bitbucket"></a>
+    <h1><a href="/2011/10/14/big-changes-and-using-blogofile-with-github-and-bitbucket" rel="bookmark" title="Permanent Link to Big changes and using blogofile with GitHub and BitBucket">Big changes and using blogofile with GitHub and BitBucket</a></h1>
+    <h3>October 14, 2011 at 06:55 PM | Categories: 
+        
+        <a href='/category/blog'>blog</a>
+        | <a href="http://blog.riteshn.com/2011/10/14/big-changes-and-using-blogofile-with-github-and-bitbucket#disqus_thread">View Comments</a>
+</h3>
+</div>
+  <div class="blog_prose">
+    
+  <div class="document">
+<p>Oh wow, its again almost 3 months before you see a new post from me. Couple of big changes in life that have happened over last couple of months.</p>
+<ul class="simple">
+<li>I changed jobs and now I am a <em>Member of Technical Staff</em> at <a class="reference external" href="http://www.meraki.com">Meraki</a>. We make the easiest Cloud Managed Enterprise Networks.</li>
+<li>The new job entails me to work on Ruby on Rails so from now you will see rather less Python and more Rails/JavaScript posts.</li>
+</ul>
+<p>On a side note, as a chronic habit - a new post would mean that I have changed my way of writing and hosting my blog. Maybe, changing my system forces me to write a blogpost. Anyway, long story short, even though Blogofile is great, working with Vaporfile and S3 was just not working out. Then I found out Steve's post on <a class="reference external" href="http://hgtip.com/tips/beginner/2009-10-13-free-hosting-at-bitbucket/">Free Hosting at Bitbucket</a>. Since I use BitBucket as my DVCS provider, I wanted to check it out.</p>
+<p>Creating a new repository with name <em>psykidellic.bitbucket.org</em> was not hard and pushing a build version of _site was even easier. Unfortunately, the way Bitbucket shows a static page is not compatible with Blogofile link generation. It would seem that blogofile creates links to post like <em>http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/</em> whereas the final page is <em>http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/index.html</em> and Bitbucket does not default to index.html. So all the links redirect back to the main page. Maybe there is something wrong with my configuration but I was too bored to dig deeper. I have seen various posts about using Blogofile with Github page and quick Googling brought me to <a class="reference external" href="http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/">Manuels post</a>. It uses <em>git submodule</em> feature and reading upon similar Mercurial feature of <a class="reference external" href="http://mercurial.selenic.com/wiki/Subrepository#Git_subrepositories">subrepos</a> say that <em>hg</em> supports git as subrepos natively.</p>
+<p>I like to keep my drafts private and thus the original repository is private at Bitbucket. But the user facing has to be public. So in no time, I had <a class="reference external" href="http://psykidellic.github.com">psykidellic.github.com</a> up and running. Mercurial subrepos work great with git and you see the result. So now the flow of my post is:</p>
+<ul class="simple">
+<li>Continuously write drafts and commit.</li>
+<li>When the time comes, blogofile build.</li>
+<li>git add NEWFILES &amp;&amp; hg push</li>
+</ul>
+<p><strong>note:</strong> I am planning to make the third part as one script which should be easy depending upon your needs.</p>
+</div>
+
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://blog.riteshn.com/2011/10/14/big-changes-and-using-blogofile-with-github-and-bitbucket#disqus_thread">Read and Post Comments</a></div>
+  
+<div class="blog_post">
+
+  <div class="blog_post_header">
     <a name="blog-moved-to-blogofile---add-google-analytics"></a>
     <h1><a href="/2011/06/07/blog-moved-to-blogofile---add-google-analytics" rel="bookmark" title="Permanent Link to Blog moved to Blogofile - add Google Analytics">Blog moved to Blogofile - add Google Analytics</a></h1>
     <h3>June 07, 2011 at 10:43 PM | Categories: 
@@ -186,8 +224,8 @@
 
 <h2>Categories</h2>
     <ul>
-     <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (3)</li>
-     <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (2)</li>
+     <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (4)</li>
+     <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (1)</li>
     </ul>
 
 
