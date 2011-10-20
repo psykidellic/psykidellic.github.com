@@ -31,6 +31,54 @@
 <div class="blog_post">
 
   <div class="blog_post_header">
+    <a name="setting-up-xmonad-and-fun-with-xinitrc/xsession"></a>
+    <h1><a href="/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession" rel="bookmark" title="Permanent Link to Setting up Xmonad and fun with xinitrc/xsession">Setting up Xmonad and fun with xinitrc/xsession</a></h1>
+    <h3>October 19, 2011 at 02:55 PM | Categories: 
+        
+        <a href='/category/blog'>blog</a>
+        | <a href="http://blog.riteshn.com/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession#disqus_thread">View Comments</a>
+</h3>
+</div>
+  <div class="blog_prose">
+    
+  <div class="document">
+<p>Finally, after years of procastinating, I finally installed Xmonad on a new virtual machine that I have been setting up for another project. Since I have been doing almost everything new in the sphere of technology, might as well start a new experience with desktop environment.</p>
+<p>Setting up Xmonad was a breeze with apt-get but the next step of setting up GDM to use xmonad for my session turned out to be more fun then I had imagined. When you start your Ubuntu you are presented with the login screen by GNOME. At this time, you can select various session/profile that you would like to use with the login. This information comes from files at <tt class="docutils literal">/usr/share/xession</tt>. One sample:</p>
+
+
+<div class="pygments_murphy"><pre>[Desktop Entry]
+Encoding=UTF-8
+Name=XMonad
+Comment=Lightweight tiling window manager
+Exec=xmonad
+Icon=xmonad.png
+Type=XSession
+</pre></div>
+
+
+
+<p>The above one is installed with xmonad and selecting the session while logging gives you the simplest <tt class="docutils literal">xmonad</tt> installation. Though this works, I wanted to configure something extra to my needs e.g. <tt class="docutils literal"><span class="pre">gnome-session</span></tt> as it some of the window drawing look nicer (specifically Firefox, Chrome). So thinking that just like back in the days, I have to setup <tt class="docutils literal">.xinitrc</tt> file and it will work, I went ahead and created one with the details I needed. Logout and login and nothing happens. Figuring, I did something wrong I spent sometime making sure the config was correct to the best of my knowledge. Eventually, after much hassles and Googling, figured out Ubuntu uses <tt class="docutils literal"><span class="pre">$HOME/.xsession</span></tt> file. With the knowledge, just doing:</p>
+
+
+<div class="pygments_murphy"><pre>cp .xinitrc .xsession
+</pre></div>
+
+
+
+<p>and selecting <tt class="docutils literal">User Defined Session</tt> in the login window and everybody is happy. In my last 30hours or about of using <a class="reference external" href="xmonad">http://www.xmonad.org</a>, I am already loving it. No more time spent on resizing and moving around windows on my big monitor. Terminal is just <tt class="docutils literal">mod+space+return</tt> away and xterm with <strong>Droid Sans Mono</strong> is simmply gorgeous.</p>
+</div>
+
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://blog.riteshn.com/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession#disqus_thread">Read and Post Comments</a></div>
+  
+<div class="blog_post">
+
+  <div class="blog_post_header">
     <a name="git-rebase---needed-a-single-revison-and-interactive-rebase-already-started"></a>
     <h1><a href="/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started" rel="bookmark" title="Permanent Link to git rebase - needed a single revison and interactive rebase already started">git rebase - needed a single revison and interactive rebase already started</a></h1>
     <h3>October 18, 2011 at 06:55 PM | Categories: 
@@ -243,57 +291,6 @@ git rebase --continue
 
 
   <div class="after_post"><a href="http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics#disqus_thread">Read and Post Comments</a></div>
-  
-<div class="blog_post">
-
-  <div class="blog_post_header">
-    <a name="blog-moved-to-blogofile"></a>
-    <h1><a href="/2011/06/02/blog-moved-to-blogofile" rel="bookmark" title="Permanent Link to Blog moved to Blogofile">Blog moved to Blogofile</a></h1>
-    <h3>June 02, 2011 at 06:55 PM | Categories: 
-        
-        <a href='/category/blog'>blog</a>
-        | <a href="http://blog.riteshn.com/2011/06/02/blog-moved-to-blogofile#disqus_thread">View Comments</a>
-</h3>
-</div>
-  <div class="blog_prose">
-    
-  <div class="document">
-<p><strong>tl;dr</strong> I would have saved couple of hours by just reading the mailing list.</p>
-<p>The following post is very much inspired by <a class="reference external" href="http://techspot.zzzeek.org/2010/12/06/my-blogofile-hacks/">this entry</a>. To get the blog up, I used <tt class="docutils literal">blogofile init simple_blog</tt> generating a minimal setup with no themes worked. I spent some time figuring out how to make my index page similar to chronological page. The docs was lacking on this part and in my eagerness, I went ahead and updated <tt class="docutils literal">index.html.mako</tt> with code from <tt class="docutils literal">chronological.mako</tt>. Realizing that its a criminal duplication of code, I was convinced that there has to be a better way. Quick walk through the mailing list pointed me to the <a class="reference external" href="http://groups.google.com/group/blogofile-discuss/browse_thread/thread/292c32bfe35b8466">following conversation</a>. Unfortunately, contrary to what is mentioned in the list, I had to set <strong>blog.path = &quot;&quot;</strong> in my <tt class="docutils literal">_config.py</tt>. Otherwise, all the links become <strong>http://page/1</strong> instead of <strong>http://MYHOST/page/1</strong>.</p>
-<p>Setting up syntax highlighting for code samples using Pygments turned out to be more work then expected. It seemed after <a class="reference external" href="http://www.blogofile.com/demo/sample_posts.html">reading</a> and this post by <a class="reference external" href="http://morgangoose.com/blog/2010/09/28/switching-to-blogofile/">Morgan Goose</a> led me to think that syntax highlighting will be automatically enabled. Unfortunately, it was not to be. I had to update the config file with (this options are present if you init blogofile.com):</p>
-
-
-<div class="pygments_murphy"><pre><span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">style</span>   <span class="o">=</span> <span class="s">&quot;murphy&quot;</span>
-<span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">css_dir</span> <span class="o">=</span> <span class="s">&quot;/css&quot;</span>
-<span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">preload_styles</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;murphy&quot;</span><span class="p">]</span>
-
-<span class="n">blog</span><span class="o">.</span><span class="n">post_default_filters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&quot;rst&quot;</span><span class="p">:</span> <span class="s">&quot;rst, syntax_highlight&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-
-
-
-<p>Apart from the above change, I also liked zzzeek's changes to the <tt class="docutils literal">syntax_highlight.py</tt> which enables me write code samples using <tt class="docutils literal">#!python</tt> directive. Lets face some facts - it will be sometime before I post anything other than Python.</p>
-<p>Next step is to get yourself registered with <a class="reference external" href="http://www.disqus.com">Disqus</a> and setup Blogofile by adding to the config file:</p>
-
-
-<div class="pygments_murphy"><pre><span class="n">blog</span><span class="o">.</span><span class="n">disqus</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">blog</span><span class="o">.</span><span class="n">disqus</span><span class="o">.</span><span class="n">name</span>    <span class="o">=</span> <span class="s">&quot;YOUR-DISQUS-APPNAME&quot;</span>
-</pre></div>
-
-
-
-<p>As a side note, if you are using <tt class="docutils literal">VIRTUALENV</tt> along with blogofile, do not forget to start your environment name with <tt class="docutils literal">_</tt>. Otherwise, blogofile will simply copy it to _site and it will get synced to your remote folder. I just use <tt class="docutils literal">_ENV</tt> instead of <tt class="docutils literal">ENV</tt>.</p>
-</div>
-
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://blog.riteshn.com/2011/06/02/blog-moved-to-blogofile#disqus_thread">Read and Post Comments</a></div>
  <a class="next" href="../2">Next Page »</a>
 
       </div><!-- End Main Block -->
@@ -311,7 +308,7 @@ git rebase --continue
 
 <h2>Categories</h2>
     <ul>
-     <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (4)</li>
+     <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (5)</li>
      <li><a href="/category/git">git</a> (<a href="/category/git/feed">rss</a>) (1)</li>
      <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (1)</li>
     </ul>

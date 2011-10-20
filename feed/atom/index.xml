@@ -7,12 +7,52 @@
   <title type="text">psykidellic's blog</title>
   <subtitle type="text">everything in general</subtitle>
 
-  <updated>2011-10-18T23:06:37Z</updated>
+  <updated>2011-10-20T22:16:06Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://blog.riteshn.com/" />
   <id>http://blog.riteshn.com//feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://blog.riteshn.com//feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://blog.riteshn.com/</uri>
+    </author>
+    <title type="html"><![CDATA[Setting up Xmonad and fun with xinitrc/xsession]]></title>
+    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession" />
+    <id>http://blog.riteshn.com/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession</id>
+    <updated>2011-10-19T14:55:00Z</updated>
+    <published>2011-10-19T14:55:00Z</published>
+    <category scheme="http://blog.riteshn.com/" term="blog" />
+    <summary type="html"><![CDATA[Setting up Xmonad and fun with xinitrc/xsession]]></summary>
+    <content type="html" xml:base="http://blog.riteshn.com/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession"><![CDATA[<div class="document">
+<p>Finally, after years of procastinating, I finally installed Xmonad on a new virtual machine that I have been setting up for another project. Since I have been doing almost everything new in the sphere of technology, might as well start a new experience with desktop environment.</p>
+<p>Setting up Xmonad was a breeze with apt-get but the next step of setting up GDM to use xmonad for my session turned out to be more fun then I had imagined. When you start your Ubuntu you are presented with the login screen by GNOME. At this time, you can select various session/profile that you would like to use with the login. This information comes from files at <tt class="docutils literal">/usr/share/xession</tt>. One sample:</p>
+
+
+<div class="pygments_murphy"><pre>[Desktop Entry]
+Encoding=UTF-8
+Name=XMonad
+Comment=Lightweight tiling window manager
+Exec=xmonad
+Icon=xmonad.png
+Type=XSession
+</pre></div>
+
+
+
+<p>The above one is installed with xmonad and selecting the session while logging gives you the simplest <tt class="docutils literal">xmonad</tt> installation. Though this works, I wanted to configure something extra to my needs e.g. <tt class="docutils literal"><span class="pre">gnome-session</span></tt> as it some of the window drawing look nicer (specifically Firefox, Chrome). So thinking that just like back in the days, I have to setup <tt class="docutils literal">.xinitrc</tt> file and it will work, I went ahead and created one with the details I needed. Logout and login and nothing happens. Figuring, I did something wrong I spent sometime making sure the config was correct to the best of my knowledge. Eventually, after much hassles and Googling, figured out Ubuntu uses <tt class="docutils literal"><span class="pre">$HOME/.xsession</span></tt> file. With the knowledge, just doing:</p>
+
+
+<div class="pygments_murphy"><pre>cp .xinitrc .xsession
+</pre></div>
+
+
+
+<p>and selecting <tt class="docutils literal">User Defined Session</tt> in the login window and everybody is happy. In my last 30hours or about of using <a class="reference external" href="xmonad">http://www.xmonad.org</a>, I am already loving it. No more time spent on resizing and moving around windows on my big monitor. Terminal is just <tt class="docutils literal">mod+space+return</tt> away and xterm with <strong>Droid Sans Mono</strong> is simmply gorgeous.</p>
+</div>
+]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>
