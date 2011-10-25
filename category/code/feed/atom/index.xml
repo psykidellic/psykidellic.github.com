@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="en"
+   >
+  <title type="text">psykidellic's blog</title>
+  <subtitle type="text">everything in general</subtitle>
+
+  <updated>2011-10-25T19:05:45Z</updated>
+  <generator uri="http://blogofile.com/">Blogofile</generator>
+
+  <link rel="alternate" type="text/html" href="http://blog.riteshn.com/" />
+  <id>http://blog.riteshn.com//feed/atom/</id>
+  <link rel="self" type="application/atom+xml" href="http://blog.riteshn.com//feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://blog.riteshn.com/</uri>
+    </author>
+    <title type="html"><![CDATA[sshfs - stuck on cp/rm and in S+ state]]></title>
+    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state" />
+    <id>http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state</id>
+    <updated>2011-10-25T18:55:00Z</updated>
+    <published>2011-10-25T18:55:00Z</published>
+    <category scheme="http://blog.riteshn.com/" term="code" />
+    <summary type="html"><![CDATA[sshfs - stuck on cp/rm and in S+ state]]></summary>
+    <content type="html" xml:base="http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state"><![CDATA[<div class="document">
+<p>So at work, we have a flow where mount one folder over sshfs and almost everybody has a shell window open all time to work on this folder. Though recently, we had a network change and after I come get back to work, even simple commands like <tt class="docutils literal">cp</tt> or <tt class="docutils literal">ls</tt> would just stuck and even on parent folder of the mount.  Doing a quick:</p>
+
+
+<div class="pygments_murphy"><pre>ps aux | grep CURRENT_COMMAND
+</pre></div>
+
+
+
+<p>shows me that the process is hung with state <strong>S+</strong> which according to manual means:</p>
+
+
+<div class="pygments_murphy"><pre>S: Interruptible sleep
+</pre></div>
+
+
+
+<p>Having a hunch that this is definitely related to sshfs and the network issues. After some time of Googling, came across <a class="reference external" href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=565229">bug report on sshfs</a>. I did this to get out of the problem:</p>
+
+
+<div class="pygments_murphy"><pre>$ ps aux | grep sshfs
+$ kill -9 PID
+$ fusermount -u MOUNT
+#You need to do the above or you will get:
+#ls: cannot access manage: Transport endpoint is not connected
+$ sshfs AND_THE_REST
+</pre></div>
+
+
+
+<p>Hope it helps.</p>
+</div>
+]]></content>
+  </entry>
+</feed>

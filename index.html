@@ -31,6 +31,60 @@
 <div class="blog_post">
 
   <div class="blog_post_header">
+    <a name="sshfs---stuck-on-cp/rm-and-in-s+-state"></a>
+    <h1><a href="/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state" rel="bookmark" title="Permanent Link to sshfs - stuck on cp/rm and in S+ state">sshfs - stuck on cp/rm and in S+ state</a></h1>
+    <h3>October 25, 2011 at 06:55 PM | Categories: 
+        
+        <a href='/category/code'>code</a>
+        | <a href="http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state#disqus_thread">View Comments</a>
+</h3>
+</div>
+  <div class="blog_prose">
+    
+  <div class="document">
+<p>So at work, we have a flow where mount one folder over sshfs and almost everybody has a shell window open all time to work on this folder. Though recently, we had a network change and after I come get back to work, even simple commands like <tt class="docutils literal">cp</tt> or <tt class="docutils literal">ls</tt> would just stuck and even on parent folder of the mount.  Doing a quick:</p>
+
+
+<div class="pygments_murphy"><pre>ps aux | grep CURRENT_COMMAND
+</pre></div>
+
+
+
+<p>shows me that the process is hung with state <strong>S+</strong> which according to manual means:</p>
+
+
+<div class="pygments_murphy"><pre>S: Interruptible sleep
+</pre></div>
+
+
+
+<p>Having a hunch that this is definitely related to sshfs and the network issues. After some time of Googling, came across <a class="reference external" href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=565229">bug report on sshfs</a>. I did this to get out of the problem:</p>
+
+
+<div class="pygments_murphy"><pre>$ ps aux | grep sshfs
+$ kill -9 PID
+$ fusermount -u MOUNT
+#You need to do the above or you will get:
+#ls: cannot access manage: Transport endpoint is not connected
+$ sshfs AND_THE_REST
+</pre></div>
+
+
+
+<p>Hope it helps.</p>
+</div>
+
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state#disqus_thread">Read and Post Comments</a></div>
+  
+<div class="blog_post">
+
+  <div class="blog_post_header">
     <a name="setting-up-xmonad-and-fun-with-xinitrc/xsession"></a>
     <h1><a href="/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession" rel="bookmark" title="Permanent Link to Setting up Xmonad and fun with xinitrc/xsession">Setting up Xmonad and fun with xinitrc/xsession</a></h1>
     <h3>October 19, 2011 at 02:55 PM | Categories: 
@@ -225,72 +279,6 @@ git rebase --continue
 
 
   <div class="after_post"><a href="http://blog.riteshn.com/2011/06/08/finding-an-item-based-on-computed-value#disqus_thread">Read and Post Comments</a></div>
-  
-<div class="blog_post">
-
-  <div class="blog_post_header">
-    <a name="blog-moved-to-blogofile---add-google-analytics"></a>
-    <h1><a href="/2011/06/07/blog-moved-to-blogofile---add-google-analytics" rel="bookmark" title="Permanent Link to Blog moved to Blogofile - add Google Analytics">Blog moved to Blogofile - add Google Analytics</a></h1>
-    <h3>June 07, 2011 at 10:43 PM | Categories: 
-        
-        <a href='/category/blog'>blog</a>
-        | <a href="http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics#disqus_thread">View Comments</a>
-</h3>
-</div>
-  <div class="blog_prose">
-    
-  <div class="document">
-<p>As a continuation from my last post, listed below are the other two changes that I have applied to my setup.</p>
-<div class="section" id="vaporfile-fix">
-<h1>Vaporfile fix</h1>
-<p>As you would know, I am using <a class="reference external" href="http://aws.amazon.com/s3/">Amazon S3</a> for this blog. I also use the excellent vaporfile script. After updating the second post yesterday, I found a bug with the script. After it updates an existing file (after matching the checksums), vaporfile fails to set the permission correctly. This results in <tt class="docutils literal">index.html</tt> to have incorrect access permission and you end up getting AccessDenied from Amazon when you try to access your blog.</p>
-<p>After around 20 minutes of investigation, I found the error and the patch is available at <a class="reference external" href="https://github.com/psykidellic/Vaporfile/commit/0a866ad8715bb4267d6ee4f5672764f4e54b7e8a">my fork of the project</a>.</p>
-<div class="section" id="addition-of-google-analytics">
-<h2>Addition of Google Analytics</h2>
-<p>Apart from Disqus, I believe Google Analytics is probably the next feature that almost everybody uses. I plan to submit this patch to Blogofile in coming days but you just need to add the following to <tt class="docutils literal">_config.py</tt>:</p>
-
-
-<div class="pygments_murphy"><pre><span class="c">### Google analytics integration</span>
-<span class="n">blog</span><span class="o">.</span><span class="n">analytics</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="c">#### enter your &#39;web property id&#39; here</span>
-<span class="n">blog</span><span class="o">.</span><span class="n">analytics</span><span class="o">.</span><span class="n">id</span>    <span class="o">=</span> <span class="s">&quot;UA-XXXXXX-6&quot;</span>
-</pre></div>
-
-
-
-<p>and to <tt class="docutils literal">footer.mako</tt>:</p>
-
-
-<div class="pygments_murphy"><pre>% if bf.config.blog.analytics.enabled:
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
-
-  <span class="kd">var</span> <span class="nx">_gaq</span> <span class="o">=</span> <span class="nx">_gaq</span> <span class="o">||</span> <span class="p">[];</span>
-  <span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_setAccount&#39;</span><span class="p">,</span> <span class="s1">&#39;${bf.config.blog.analytics.id}&#39;</span><span class="p">]);</span>
-  <span class="nx">_gaq</span><span class="p">.</span><span class="nx">push</span><span class="p">([</span><span class="s1">&#39;_trackPageview&#39;</span><span class="p">]);</span>
-
-  <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">ga</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span> <span class="nx">ga</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span> <span class="nx">ga</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="nx">ga</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;https:&#39;</span> <span class="o">==</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s1">&#39;https://ssl&#39;</span> <span class="o">:</span> <span class="s1">&#39;http://www&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.google-analytics.com/ga.js&#39;</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span> <span class="nx">s</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">ga</span><span class="p">,</span> <span class="nx">s</span><span class="p">);</span>
-  <span class="p">})();</span>
-
-<span class="nt">&lt;/script&gt;</span>
-% endif
-</pre></div>
-
-
-
-</div>
-</div>
-</div>
-
-
-  </div>
-</div>
-
-
-
-  <div class="after_post"><a href="http://blog.riteshn.com/2011/06/07/blog-moved-to-blogofile---add-google-analytics#disqus_thread">Read and Post Comments</a></div>
  <a class="next" href="/page/2">Next Page »</a>
 
       </div><!-- End Main Block -->
@@ -309,6 +297,7 @@ git rebase --continue
 <h2>Categories</h2>
     <ul>
      <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (5)</li>
+     <li><a href="/category/code">code</a> (<a href="/category/code/feed">rss</a>) (1)</li>
      <li><a href="/category/git">git</a> (<a href="/category/git/feed">rss</a>) (1)</li>
      <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (1)</li>
     </ul>

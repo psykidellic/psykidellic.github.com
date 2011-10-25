@@ -31,6 +31,60 @@
 <div class="blog_post">
 
   <div class="blog_post_header">
+    <a name="sshfs---stuck-on-cp/rm-and-in-s+-state"></a>
+    <h1><a href="/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state" rel="bookmark" title="Permanent Link to sshfs - stuck on cp/rm and in S+ state">sshfs - stuck on cp/rm and in S+ state</a></h1>
+    <h3>October 25, 2011 at 06:55 PM | Categories: 
+        
+        <a href='/category/code'>code</a>
+        | <a href="http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state#disqus_thread">View Comments</a>
+</h3>
+</div>
+  <div class="blog_prose">
+    
+  <div class="document">
+<p>So at work, we have a flow where mount one folder over sshfs and almost everybody has a shell window open all time to work on this folder. Though recently, we had a network change and after I come get back to work, even simple commands like <tt class="docutils literal">cp</tt> or <tt class="docutils literal">ls</tt> would just stuck and even on parent folder of the mount.  Doing a quick:</p>
+
+
+<div class="pygments_murphy"><pre>ps aux | grep CURRENT_COMMAND
+</pre></div>
+
+
+
+<p>shows me that the process is hung with state <strong>S+</strong> which according to manual means:</p>
+
+
+<div class="pygments_murphy"><pre>S: Interruptible sleep
+</pre></div>
+
+
+
+<p>Having a hunch that this is definitely related to sshfs and the network issues. After some time of Googling, came across <a class="reference external" href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=565229">bug report on sshfs</a>. I did this to get out of the problem:</p>
+
+
+<div class="pygments_murphy"><pre>$ ps aux | grep sshfs
+$ kill -9 PID
+$ fusermount -u MOUNT
+#You need to do the above or you will get:
+#ls: cannot access manage: Transport endpoint is not connected
+$ sshfs AND_THE_REST
+</pre></div>
+
+
+
+<p>Hope it helps.</p>
+</div>
+
+
+  </div>
+</div>
+
+
+
+  <div class="after_post"><a href="http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state#disqus_thread">Read and Post Comments</a></div>
+  
+<div class="blog_post">
+
+  <div class="blog_post_header">
     <a name="setting-up-xmonad-and-fun-with-xinitrc/xsession"></a>
     <h1><a href="/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession" rel="bookmark" title="Permanent Link to Setting up Xmonad and fun with xinitrc/xsession">Setting up Xmonad and fun with xinitrc/xsession</a></h1>
     <h3>October 19, 2011 at 02:55 PM | Categories: 
@@ -196,6 +250,7 @@ git rebase --continue
 <h2>Categories</h2>
     <ul>
      <li><a href="/category/blog">blog</a> (<a href="/category/blog/feed">rss</a>) (5)</li>
+     <li><a href="/category/code">code</a> (<a href="/category/code/feed">rss</a>) (1)</li>
      <li><a href="/category/git">git</a> (<a href="/category/git/feed">rss</a>) (1)</li>
      <li><a href="/category/python">python</a> (<a href="/category/python/feed">rss</a>) (1)</li>
     </ul>

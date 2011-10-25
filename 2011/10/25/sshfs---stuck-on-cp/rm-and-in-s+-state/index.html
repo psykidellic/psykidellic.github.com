@@ -28,65 +28,52 @@
       <div id="main">
           
 
-<a class="prev" href="http://blog.riteshn.com/2011/10/14/big-changes-and-using-blogofile-with-github-and-bitbucket">Big changes and using blogofile with GitHub and BitBucket</a>
-<a class="next" href="http://blog.riteshn.com/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession">Setting up Xmonad and fun with xinitrc/xsession</a>
+<a class="prev" href="http://blog.riteshn.com/2011/10/19/setting-up-xmonad-and-fun-with-xinitrc/xsession">Setting up Xmonad and fun with xinitrc/xsession</a>
 
 <div class="blog_post">
 
   <div class="blog_post_header">
-    <a name="git-rebase---needed-a-single-revison-and-interactive-rebase-already-started"></a>
-    <h1><a href="/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started" rel="bookmark" title="Permanent Link to git rebase - needed a single revison and interactive rebase already started">git rebase - needed a single revison and interactive rebase already started</a></h1>
-    <h3>October 18, 2011 at 06:55 PM | Categories: 
+    <a name="sshfs---stuck-on-cp/rm-and-in-s+-state"></a>
+    <h1><a href="/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state" rel="bookmark" title="Permanent Link to sshfs - stuck on cp/rm and in S+ state">sshfs - stuck on cp/rm and in S+ state</a></h1>
+    <h3>October 25, 2011 at 06:55 PM | Categories: 
         
-        <a href='/category/git'>git</a>
-        | <a href="http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started#disqus_thread">View Comments</a>
+        <a href='/category/code'>code</a>
+        | <a href="http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state#disqus_thread">View Comments</a>
 </h3>
 </div>
   <div class="blog_prose">
     
   <div class="document">
-<p>Recently at work, I was doing a <em>git rebase</em> and it failed due to some reason. After manually fixing it, I ran: <strong>git rebase --continue</strong> and it throws up:</p>
+<p>So at work, we have a flow where mount one folder over sshfs and almost everybody has a shell window open all time to work on this folder. Though recently, we had a network change and after I come get back to work, even simple commands like <tt class="docutils literal">cp</tt> or <tt class="docutils literal">ls</tt> would just stuck and even on parent folder of the mount.  Doing a quick:</p>
 
 
-<div class="pygments_murphy"><pre>fatal: needed a single revison
+<div class="pygments_murphy"><pre>ps aux | grep CURRENT_COMMAND
 </pre></div>
 
 
 
-<p>After browsing through the docs and StackOverflow reading up, I figured the best way is to look for point before the rebase or at a state where you know its good:</p>
+<p>shows me that the process is hung with state <strong>S+</strong> which according to manual means:</p>
 
 
-<div class="pygments_murphy"><pre>git reflog #look for the record e.g. {HEAD}@4
-git reset --hard {HEAD}@4
+<div class="pygments_murphy"><pre>S: Interruptible sleep
 </pre></div>
 
 
 
-<p>Then if you do:</p>
+<p>Having a hunch that this is definitely related to sshfs and the network issues. After some time of Googling, came across <a class="reference external" href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=565229">bug report on sshfs</a>. I did this to get out of the problem:</p>
 
 
-<div class="pygments_murphy"><pre>git rebase --continue
+<div class="pygments_murphy"><pre>$ ps aux | grep sshfs
+$ kill -9 PID
+$ fusermount -u MOUNT
+#You need to do the above or you will get:
+#ls: cannot access manage: Transport endpoint is not connected
+$ sshfs AND_THE_REST
 </pre></div>
 
 
 
-<p>and get:</p>
-
-
-<div class="pygments_murphy"><pre>Interactive rebase already started
-</pre></div>
-
-
-
-<p>the commands that worked for me:</p>
-
-
-<div class="pygments_murphy"><pre>git rebase -i --abort
-git rebase --continue
-</pre></div>
-
-
-
+<p>Hope it helps.</p>
 </div>
 
 
@@ -97,7 +84,7 @@ git rebase --continue
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-  var disqus_url = "http://blog.riteshn.com/2011/10/18/git-rebase---needed-a-single-revison-and-interactive-rebase-already-started";
+  var disqus_url = "http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state";
 </script>
 <script type="text/javascript" src="http://disqus.com/forums/psykidellic-blog/embed.js"></script>
 <noscript><a href="http://psykidellic-blog.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     >
+  <channel>
+    <title>psykidellic's blog</title>
+    <link>http://blog.riteshn.com/</link>
+    <description>everything in general</description>
+    <pubDate>Tue, 25 Oct 2011 19:05:45 GMT</pubDate>
+    <generator>Blogofile</generator>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>sshfs - stuck on cp/rm and in S+ state</title>
+      <link>http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state</link>
+      <pubDate>Tue, 25 Oct 2011 18:55:00 EDT</pubDate>
+      <category><![CDATA[code]]></category>
+      <guid isPermaLink="true">http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state</guid>
+      <description>sshfs - stuck on cp/rm and in S+ state</description>
+      <content:encoded><![CDATA[<div class="document">
+<p>So at work, we have a flow where mount one folder over sshfs and almost everybody has a shell window open all time to work on this folder. Though recently, we had a network change and after I come get back to work, even simple commands like <tt class="docutils literal">cp</tt> or <tt class="docutils literal">ls</tt> would just stuck and even on parent folder of the mount.  Doing a quick:</p>
+
+
+<div class="pygments_murphy"><pre>ps aux | grep CURRENT_COMMAND
+</pre></div>
+
+
+
+<p>shows me that the process is hung with state <strong>S+</strong> which according to manual means:</p>
+
+
+<div class="pygments_murphy"><pre>S: Interruptible sleep
+</pre></div>
+
+
+
+<p>Having a hunch that this is definitely related to sshfs and the network issues. After some time of Googling, came across <a class="reference external" href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=565229">bug report on sshfs</a>. I did this to get out of the problem:</p>
+
+
+<div class="pygments_murphy"><pre>$ ps aux | grep sshfs
+$ kill -9 PID
+$ fusermount -u MOUNT
+#You need to do the above or you will get:
+#ls: cannot access manage: Transport endpoint is not connected
+$ sshfs AND_THE_REST
+</pre></div>
+
+
+
+<p>Hope it helps.</p>
+</div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
