@@ -7,12 +7,39 @@
   <title type="text">psykidellic's blog</title>
   <subtitle type="text">everything in general</subtitle>
 
-  <updated>2011-10-25T19:06:26Z</updated>
+  <updated>2012-01-04T08:39:24Z</updated>
   <generator uri="http://blogofile.com/">Blogofile</generator>
 
   <link rel="alternate" type="text/html" href="http://blog.riteshn.com/" />
   <id>http://blog.riteshn.com//feed/atom/</id>
   <link rel="self" type="application/atom+xml" href="http://blog.riteshn.com//feed/atom/" />
+  <entry>
+    <author>
+      <name></name>
+      <uri>http://blog.riteshn.com/</uri>
+    </author>
+    <title type="html"><![CDATA[New year resolutions for 2012]]></title>
+    <link rel="alternate" type="text/html" href="http://blog.riteshn.com/2012/01/03/new-year-resolutions-for-2012" />
+    <id>http://blog.riteshn.com/2012/01/03/new-year-resolutions-for-2012</id>
+    <updated>2012-01-03T21:36:00Z</updated>
+    <published>2012-01-03T21:36:00Z</published>
+    <category scheme="http://blog.riteshn.com/" term="personal" />
+    <summary type="html"><![CDATA[New year resolutions for 2012]]></summary>
+    <content type="html" xml:base="http://blog.riteshn.com/2012/01/03/new-year-resolutions-for-2012"><![CDATA[<div class="document">
+<p>First of all - Happy New Year to all my readers.</p>
+<p>As is the norm, everybody makes a new year resolution list (with sliding scale of perseverance to complete the list). Here is mine for this year:</p>
+<ul class="simple">
+<li>Read as many books as I can <a class="reference external" href="http://blamcast.net/articles/best-science-fiction-books">from this list</a>.</li>
+<li>Since I have always been interested in having my own startup, another list of books to read <a class="reference external" href="http://onstartups.com/tabid/3339/bid/75597/The-Big-List-The-Best-and-Worst-Startup-Stuff-In-2011.aspx">about startups</a>.</li>
+<li>After working with C/C++ and dramatically opposite Ruby/Python, its time for me to learn something <strong>in between</strong> and my goal is to learn and write a simple progam in Scala.</li>
+<li>Learn rock climbing. To fulfill this destiny, I have already join <a class="reference external" href="http://www.touchstoneclimbing.com/">Mission Cliffs</a> which is just behind my workplace.</li>
+<li>Cook more. I have been kinda slacking off on this after moving to SF.</li>
+<li>Travel. 2011 was the worst year for me in terms of travelling and I plan to change that.</li>
+<li>Last but not least, make 2012 better than 2011 which was not a particularly satisfying year for me.</li>
+</ul>
+</div>
+]]></content>
+  </entry>
   <entry>
     <author>
       <name></name>

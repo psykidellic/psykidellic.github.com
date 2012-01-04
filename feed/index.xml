@@ -10,10 +10,32 @@
     <title>psykidellic's blog</title>
     <link>http://blog.riteshn.com/</link>
     <description>everything in general</description>
-    <pubDate>Tue, 25 Oct 2011 19:06:26 GMT</pubDate>
+    <pubDate>Wed, 04 Jan 2012 08:39:24 GMT</pubDate>
     <generator>Blogofile</generator>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
+    <item>
+      <title>New year resolutions for 2012</title>
+      <link>http://blog.riteshn.com/2012/01/03/new-year-resolutions-for-2012</link>
+      <pubDate>Tue, 03 Jan 2012 21:36:00 EST</pubDate>
+      <category><![CDATA[personal]]></category>
+      <guid isPermaLink="true">http://blog.riteshn.com/2012/01/03/new-year-resolutions-for-2012</guid>
+      <description>New year resolutions for 2012</description>
+      <content:encoded><![CDATA[<div class="document">
+<p>First of all - Happy New Year to all my readers.</p>
+<p>As is the norm, everybody makes a new year resolution list (with sliding scale of perseverance to complete the list). Here is mine for this year:</p>
+<ul class="simple">
+<li>Read as many books as I can <a class="reference external" href="http://blamcast.net/articles/best-science-fiction-books">from this list</a>.</li>
+<li>Since I have always been interested in having my own startup, another list of books to read <a class="reference external" href="http://onstartups.com/tabid/3339/bid/75597/The-Big-List-The-Best-and-Worst-Startup-Stuff-In-2011.aspx">about startups</a>.</li>
+<li>After working with C/C++ and dramatically opposite Ruby/Python, its time for me to learn something <strong>in between</strong> and my goal is to learn and write a simple progam in Scala.</li>
+<li>Learn rock climbing. To fulfill this destiny, I have already join <a class="reference external" href="http://www.touchstoneclimbing.com/">Mission Cliffs</a> which is just behind my workplace.</li>
+<li>Cook more. I have been kinda slacking off on this after moving to SF.</li>
+<li>Travel. 2011 was the worst year for me in terms of travelling and I plan to change that.</li>
+<li>Last but not least, make 2012 better than 2011 which was not a particularly satisfying year for me.</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
     <item>
       <title>sshfs - stuck on cp/rm and in S+ state</title>
       <link>http://blog.riteshn.com/2011/10/25/sshfs---stuck-on-cp/rm-and-in-s+-state</link>
