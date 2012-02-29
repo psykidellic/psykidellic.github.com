@@ -6,8 +6,8 @@ require "stringex"
 ## -- Misc Configs -- ##
 source_dir      = "."    # source file directory
 posts_dir       = "_posts"    # directory for blog files
-new_post_ext    = "textile"  # default new post file extension when using the new_post task
-new_page_ext    = "textile"  # default new page file extension when using the new_page task
+new_post_ext    = "markdown"  # default new post file extension when using the new_post task
+new_page_ext    = "markdown"  # default new page file extension when using the new_page task
 server_port     = "4000"      # port for preview server eg. localhost:4000
 
 #######################
@@ -35,10 +35,29 @@ task :new_post, :title do |t, args|
     post.puts "post-link:"
     post.puts "---"
     post.puts ""
-    post.puts "bq. BLOCKQUOTE"
+  end
+end
+
+#addition to easily create draft that can be published later on
+task :new_draft, :title do |t, args|
+  raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
+  mkdir_p "#{source_dir}/#{posts_dir}"
+  args.with_defaults(:title => 'new-post')
+  title = args.title
+  filename = "#{source_dir}/#{posts_dir}/#{title.to_url}.#{new_post_ext}"
+  if File.exist?(filename)
+    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+  end
+  puts "Creating new draft: #{filename}"
+  open(filename, 'w') do |post|
+    post.puts "---"
+    post.puts "title: #{title.gsub(/&/,'&amp;')}"
+    post.puts "post-link:"
+    post.puts "---"
     post.puts ""
   end
 end
+
 
 # requires ruby 1.9 :(
 desc "preview the site in a web browser"
