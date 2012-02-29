@@ -3,14 +3,14 @@
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    {% if page.title == 'Home' %}
-   <title>Julian Yap</title>
+   <title>psykidellic's blog</title>
    {% else %}
    <title>{{ page.title }}</title>
    {% endif %}
-   <meta name="author" content="Julian Yap" />
+   <meta name="author" content="psykidellic" />
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   <link href="http://feeds.julianyap.com/julianyap" rel="alternate" title="Julian Yap" type="application/rss+xml" />
-   <link href="https://plus.google.com/111539417571342089192" rel="publisher" />
+   <link href="http://feeds.julianyap.com/julianyap" rel="alternate" title="psykidellic's blog" type="application/rss+xml" />
+   <link href="https://psykidellic.github.com" rel="publisher" />
    <link rel="shortcut icon" href="/favicon.ico" />
 
    <!-- syntax highlighting CSS -->
@@ -26,9 +26,9 @@
 
 <div class="container">
   <div class="sixteen columns title">
-    <a href="{{ site.baseurl }}" title="Julian Yap: Home">Julian Yap</a>
+    <a href="{{ site.baseurl }}" title="psykidellic: Home">psykidellic</a>
   </div>
-  
+
   <div class="eleven columns">
   {{ content }}
   </div>
@@ -37,15 +37,15 @@
   <ul class="posts">
     <li><a href="{{ site.baseurl }}pages/about.html">About</a></li>
     <li><a href="{{ site.baseurl }}pages/archives.html">Archives</a></li>
-    <li><a href="{{ site.baseurl }}pages/projects.html">Projects</a></li>
   </ul>
   <!-- AddThis Button BEGIN -->
   <h1>Follow Me</h1>
-  <div class="addthis_toolbox addthis_32x32_style addthis_vertical_style">
-  <a class="addthis_button_twitter_follow" addthis:userid="jyap"></a>
-  <a class="addthis_button_google_follow" addthis:userid="111539417571342089192"></a>
-  <a class="addthis_button_rss_follow" addthis:url="http://feeds.julianyap.com/julianyap"></a>
-  </div>
+  <ul class="posts">
+        <li><a href="https://bitbucket.org/psykidellic">BitBucket</a></li>
+        <li><a href="http://github.com/psykidellic">GitHub</li>
+        <li><a href="http://www.linkedin.com/profile/view?id=48147868>">LinkedIn</a></li>
+        <li><a href="http://twitter.com/psykidellic">Twitter</a></li>
+  </ul>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f30f5735bbf9458"></script>
   <!-- AddThis Button END -->
   </div>
@@ -53,28 +53,29 @@
   <div class="sixteen columns footer">
     <div class="contact">
       <p>
-        Copyright © Julian Yap 2011
+        Copyright © Ritesh Nadhani 2012
       </p>
     </div>
     <div>
       <p>
-      Follow Julian: <a href="http://twitter.com/jyap">Twitter</a> / <a href="https://plus.google.com/111539417571342089192/" rel="author">Google+</a> / <a href="http://feeds.julianyap.com/julianyap">RSS</a>
+      Follow Julian: <a href="http://twitter.com/psykidellic">Twitter</a>
       </p>
     </div>
   </div>
 </div>
 <!-- Analytics -->
 <script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://www2.julianyap.com/stats/" : "http://www2.julianyap.com/stats/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://www2.julianyap.com/stats/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-510639-6']);
+  _gaq.push(['_trackPageview']);
 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 </html>
