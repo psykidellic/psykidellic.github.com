@@ -2,6 +2,7 @@
 layout: post
 title: Setting up Xmonad and fun with xinitrc/xsession
 post-link:
+tags: [programming]
 ---
 Finally, after years of procastinating, I finally installed Xmonad on a
 new virtual machine that I have been setting up for another project.

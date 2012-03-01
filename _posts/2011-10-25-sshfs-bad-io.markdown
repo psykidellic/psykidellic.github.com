@@ -3,6 +3,7 @@ layout: post
 title: ssfs-bad-io
 date: 2011-10-25 14:29
 post-link:
+tags : [intro, beginner, jekyll, tutorial]
 ---
 So at work, we have a flow where mount one folder over sshfs and almost
 everybody has a shell window open all time to work on this folder.
