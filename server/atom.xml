@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Zach Holman</title>
+ <link href="http://zachholman.com/atom.xml" rel="self"/>
+ <link href="http://zachholman.com/"/>
+ <updated>2013-06-06T11:11:19-07:00</updated>
+ <id>http://zachholman.com</id>
+ <author>
+   <name>Zach Holman</name>
+ </author>
+ 
+ 
+ <entry>
+   <title>Left</title>
+   <link href="http://zachholman.com/posts/left"/>
+   <updated>2012-12-12T00:00:00-08:00</updated>
+   <id>http://zachholman.com/posts/left</id>
+   <content type="html">&lt;p&gt;Left is a clean, whitespace-happy layout for &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is designed to be an easy layout to modify for your own blog. It was
+extracted from &lt;a href=&quot;http://zachholman.com&quot;&gt;zachholman.com&lt;/a&gt;, which means it was battle-hardened from
+years of posting serious blog posts about emoji and swear words.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;re actually reading an example post right now. See how cool it is? Oh, be
+quiet, you&amp;rsquo;re making me blush.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;You&amp;rsquo;ll want to &lt;a href=&quot;https://github.com/holman/left#readme&quot;&gt;get the code&lt;/a&gt; and read the README to learn how to
+install and set up Left for your own purposes.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions, follow and ping me on Twitter- I&amp;rsquo;m
+&lt;a href=&quot;https://twitter.com/holman&quot;&gt;@holman&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Moving to zsh from bash</title>
+   <link href="http://zachholman.com/posts/moving-to-zsh-from-bash"/>
+   <updated>2012-07-06T03:55:12-07:00</updated>
+   <id>http://zachholman.com/posts/moving-to-zsh-from-bash</id>
+   <content type="html">&lt;p&gt;Alright, after finally stalling it for years, I have finally moved to &lt;code&gt;zsh&lt;/code&gt; from
+the old and trusted &lt;code&gt;bash&lt;/code&gt;. I would have to say that I never ever used bash to
+its maximum power nor I would probably use the maximum features of &lt;code&gt;zsh&lt;/code&gt;. But I
+wanted to see if &lt;code&gt;zsh&lt;/code&gt; provides better features for normal to average user like
+me. Getting the defaults right is big win for me.&lt;/p&gt;
+
+&lt;p&gt;Mac OS X comes with a pretty recent version of zsh so you can simply use it or
+if you like to be on bleeding edge, get it from brew (make sure its then added
+to &lt;code&gt;/etc/shells&lt;/code&gt;). Change your default shell using &lt;code&gt;chsh&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1&gt;Improvements&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Autocompletion&lt;/em&gt; - Honestly, the autocompletion is just better. Showing me all
+the options as menu is awesome.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Autosuggestion and autocorrection&lt;/em&gt; - 90% of the time I have achieved right
+option from zsh. It even autocorrets/suggests aliases.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Finding files&lt;/em&gt; - No more complex &lt;code&gt;find&lt;/code&gt; commands. All my searches for last
+week has been &lt;code&gt;ls **/prefix*&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Better movement between folders&lt;/em&gt; - I have found that zsh does better
+completion of directories and when you want to go back one level up.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;.oh-my-zsh&lt;/h1&gt;
+
+&lt;p&gt;From &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh/&quot;&gt;their site&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;A handful of functions, auto-complete helpers, and stuff that makes you shout…
+“OH MY ZSHELL!”&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;In short, its a collection of community plugins and options that should make
+your life easier from start but as with all great power comes great
+responsibility. Its really is double edged sword. On one hand, you get many
+readymade plugins and solutions that it will cover 99% of your work. On the
+other, it will be very magic when you cannot figure out why something is working
+or not working. E.g., I have tmux setup with &lt;code&gt;set-window-option -g
+automatic-rename off&lt;/code&gt; but it was not working because zsh was updating the title.
+I had to spend some time on Google and finally a fine folk at &lt;code&gt;#tmux&lt;/code&gt; pointed me
+to the right direction.&lt;/p&gt;
+
+&lt;h1&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;All in all, I like it and hopefully with more time spent with it, my command
+line environment is going to get better.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Further reading:&lt;/strong&gt; One of these days, I am going to sit down and read through
+the &lt;a href=&quot;http://www.bash2zsh.com/zsh_refcard/refcard.pdf&quot;&gt;zsh cheatsheet&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Using spellchecking with VIM</title>
+   <link href="http://zachholman.com/posts/using-spellchecking-with-vim"/>
+   <updated>2012-07-05T16:46:20-07:00</updated>
+   <id>http://zachholman.com/posts/using-spellchecking-with-vim</id>
+   <content type="html">&lt;p&gt;Starting with 7.x, vim integrates a powerful spell checker. You can enable it by
+either adding it to your &lt;code&gt;.vimr&lt;/code&gt; or setting as toggable command.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;:setlocal spell&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You basically need to know about:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;]s&lt;/code&gt; — move to the next misspelled word&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[s&lt;/code&gt; — move to the previous misspelled word&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zg&lt;/code&gt; — add a word to the dictionary&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zug&lt;/code&gt; — undo the addition of a word to the dictionary&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;z=&lt;/code&gt; — view spelling suggestions for a misspelled word
+
+&lt;ul&gt;
+&lt;li&gt;One useful feature is that you can append &lt;code&gt;[n]&lt;/code&gt; before the command and it
+will automatically select the nth option from suggestion. If you do lot of
+writing that invovles spell checking, I will suggest that you map the three
+characters to something more convenient. 90% of the time, you want to use
+&lt;code&gt;1z=&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Using tmux to copy text between two sessions</title>
+   <link href="http://zachholman.com/posts/using-tmux-to-copy-text-between-two-sessions"/>
+   <updated>2012-07-05T11:36:52-07:00</updated>
+   <id>http://zachholman.com/posts/using-tmux-to-copy-text-between-two-sessions</id>
+   <content type="html">&lt;p&gt;As I mentioned in my previous post, I did not yet find a problem where I could
+effectively use the cut-paste between tmux buffers. But now I do. This post will
+describe the steps to copy text from one of your remote session to local session
+using tmux buffers.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; You can probably do the same using Mac OS X buffer (using mouse to
+select text and Cmd-C/Cmd-V). This post will show you a way without moving your
+hand away from your keyboard, which I believe is much more efficient. If you are
+Linux/*nix, check out this &lt;a href=&quot;http://unix.stackexchange.com/questions/15715/getting-tmux-to-copy-a-buffer-to-the-clipboard&quot;&gt;stackexchange
+question&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;setw -g mode-keys vi
+unbind p
+&lt;span class=&quot;nb&quot;&gt;bind &lt;/span&gt;p paste-buffer
+&lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; -t vi-copy v begin-selection
+&lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; -t vi-copy y copy-selection
+&lt;span class=&quot;nb&quot;&gt;bind&lt;/span&gt; -t vi-copy Escape cancel
+&lt;span class=&quot;nb&quot;&gt;bind &lt;/span&gt;y run &lt;span class=&quot;s2&quot;&gt;&amp;quot;tmux save-buffer - | reattach-to-user-namespace pbcopy&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here is a perfect use case example.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Open a file in your local session.&lt;/li&gt;
+&lt;li&gt;Split your tmux pane.&lt;/li&gt;
+&lt;li&gt;Login to a remote server&lt;/li&gt;
+&lt;li&gt;Open a text editor.&lt;/li&gt;
+&lt;li&gt;Get into copy-mode by pressing &lt;code&gt;&amp;lt;prefix&amp;gt;[&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select lines of text pressing &lt;code&gt;v&lt;/code&gt;. You can use vi movement commands too&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;y&lt;/code&gt; to yank to tmux buffer&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Esc&lt;/code&gt; to get out of copy-mode.&lt;/li&gt;
+&lt;li&gt;Move to your local session pane.&lt;/li&gt;
+&lt;li&gt;Get in insert mode in vim.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;prefix&amp;gt;p&lt;/code&gt; to paste from the tmux buffer.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Installing and developing Android applications on command line in OS X</title>
+   <link href="http://zachholman.com/posts/installing-and-developing-android-applications-on-command-line-in-os-x"/>
+   <updated>2012-07-03T21:40:43-07:00</updated>
+   <id>http://zachholman.com/posts/installing-and-developing-android-applications-on-command-line-in-os-x</id>
+   <content type="html">&lt;p&gt;Who wants Eclipse when you can use vim like a &lt;code&gt;vimmer&lt;/code&gt;. This document will help
+you get ready and develop Android applications from command line.&lt;/p&gt;
+
+&lt;p&gt;As usual, without saying - if you have not yet, &lt;a href=&quot;http://mxcl.github.com/homebrew/&quot;&gt;Get
+Homebrew&lt;/a&gt;. This post also assumes that you
+have installed the command line tools from XCode and
+&lt;a href=&quot;http://ant.apache.org/&quot;&gt;Ant&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1&gt;Steps&lt;/h1&gt;
+
+&lt;h2&gt;Install Android SDK&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;brew install android-sdk&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;==&amp;gt; Downloading http://dl.google.com/android/android-sdk_r20-macosx.zip&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;####################################################################### 100.0%\&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;==&amp;gt; Caveats&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Now run the `android&amp;#39; tool to install the actual SDK stuff.&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt;The Android-SDK location for IDEs such as Eclipse, IntelliJ etc is:&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;  /usr/local/Cellar/android-sdk/r20&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt; you will have to install the platform-tools and docs every time this formula&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt; updates. if you want to try and fix this then see the comment in this formula.&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt; you may need to add the following to your .bashrc:&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;   export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;   ==&amp;gt; Summary&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;   /usr/local/Cellar/android-sdk/r20: 444 files, 70M, built in 2.1 minutes&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will only install the &lt;em&gt;Android SDK Manager&lt;/em&gt;. None of the actual SDK or
+anything is installed.&lt;/p&gt;
+
+&lt;p&gt;As suggested by Homebrewa, add the lines to your &lt;code&gt;.bashrc&lt;/code&gt;. You can start the
+manager by typing &lt;code&gt;android&lt;/code&gt;. Generally, I like to install a version from every
+major release (so that I can quickly debug things out if necessary). You can
+choose whichever version you want.&lt;/p&gt;
+
+&lt;h2&gt;Bootstrap your project for specific target&lt;/h2&gt;
+
+&lt;p&gt;Remember, we had installed multiple version of SDK. We have to setup an Android
+Virtual Device for it and setup the project for the target.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;android list target&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;Available Android targets:
+id: 1 or &lt;span class=&quot;s2&quot;&gt;&amp;quot;android-10&amp;quot;&lt;/span&gt;
+     Name: Android 2.3.3
+     Type: Platform
+     API level: 10
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WVGA800 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;default&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, WVGA854
+     ABIs : armeabi
+id: 2 or &lt;span class=&quot;s2&quot;&gt;&amp;quot;android-13&amp;quot;&lt;/span&gt;
+     Name: Android 3.2
+     Type: Platform
+     API level: 13
+     Revision: 1
+     Skins: WXGA &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;default&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+     ABIs : armeabi
+id: 3 or &lt;span class=&quot;s2&quot;&gt;&amp;quot;android-15&amp;quot;&lt;/span&gt;
+     Name: Android 4.0.3
+     Type: Platform
+     API level: 15
+     Revision: 3
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;default&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, WVGA854, WXGA720, WXGA800
+     ABIs : armeabi-v7a
+id: 4 or &lt;span class=&quot;s2&quot;&gt;&amp;quot;android-16&amp;quot;&lt;/span&gt;
+     Name: Android 4.1
+     Type: Platform
+     API level: 16
+     Revision: 1
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;default&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, WVGA854, WXGA720, WXGA800, WXGA800-7in
+     ABIs : armeabi-v7a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;android create avd --target 1 --name yourprojectname&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$:&lt;/span&gt; android create avd --target 1 --name param
+Auto-selecting single ABI armeabi
+Android 2.3.3 is a basic Android platform.
+Do you wish to create a custom hardware profile &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;no&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+Created AVD &lt;span class=&quot;s1&quot;&gt;&amp;#39;param&amp;#39;&lt;/span&gt; based on Android 2.3.3, ARM &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;armeabi&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; processor,
+with the following hardware config:
+hw.lcd.density&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;240
+vm.heapSize&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;24
+hw.ramSize&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;256
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now if its a new project, you can bootstrap one by using something like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;android create project --name HelloWorld --activity HelloWorld --path ./
+--package com.examples.helloworld --target 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you already have an Eclipse build project and you want to start doing it
+right. Set it up using &lt;code&gt;android update project --target 1 --path .&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you can build it using &lt;code&gt;ant debug&lt;/code&gt; or &lt;code&gt;ant release&lt;/code&gt; and corresponding
+&lt;code&gt;.apk&lt;/code&gt; file will be created.&lt;/p&gt;
+
+&lt;h1&gt;Running in the emulator&lt;/h1&gt;
+
+&lt;p&gt;Lets start up the avd that we created before. Assuming, you named your project
+&amp;ldquo;awesome&amp;rdquo;, we can start the emulator &lt;code&gt;emulator -avd awesome&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now we can install the above built packager using the &lt;code&gt;Android Debug Bridge or
+adb&lt;/code&gt; by running &lt;code&gt;adb install bin/awesome-debug.apk&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should now see your new app in the applications list.&lt;/p&gt;
+
+&lt;h1&gt;References&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://developer.android.com/tools/building/building-cmdline.html&quot;&gt;Android Developer Site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.aplusbi.com/?p=164&quot;&gt;http://www.aplusbi.com/?p=164&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.standalonecode.com/?p=269&quot;&gt;http://blog.standalonecode.com/?p=269&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://incise.org/android-development-on-the-command-line.html&quot;&gt;http://incise.org/android-development-on-the-command-line.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>One terminal to rule them all - for the power users</title>
+   <link href="http://zachholman.com/posts/one-terminal-to-rule-them-all"/>
+   <updated>2012-06-28T14:04:59-07:00</updated>
+   <id>http://zachholman.com/posts/one-terminal-to-rule-them-all</id>
+   <content type="html">&lt;p&gt;Couple of weeks back, while researching on completely unrelated topic, I came
+across various blog/references espousing the effectiveness of working on command
+line. Over years, I have noticed and have been fascinated by many who have
+absolutely fantastic in getting their job done from the command line. For as
+long as I remember, I have been thinking of moving to similar workflow but due
+to one reason or another, never took the effort to spend time to set it up.&lt;/p&gt;
+
+&lt;h1&gt;Workflow&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Editor for coding (since I have been doing Python/Ruby/Scala development
+lately, complete IDE have become redundant).&lt;/li&gt;
+&lt;li&gt;Browser for GMail, Google Reader, Twitter, Facebook, Reddit, Browsing.&lt;/li&gt;
+&lt;li&gt;The venerable Terminal.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Problems&lt;/h1&gt;
+
+&lt;p&gt;Overtime, I tried using tools specific to things like Twitter, Facebook but the
+hassle of learning another tool, dealing with Adobe Air updates just made the
+whole process painful. Couple with that Mac updates needing restart, I would
+have to reopen everything again. Yes, there are ways/tools to set the apps that
+have to started etc. but overtime they are just hassle to maintain. I spent
+some time learning Quicksilver when I got my first Mac during college but since
+I had to move to use Linux almost exclusively, I never got the chance to master
+it.&lt;/p&gt;
+
+&lt;p&gt;I still have vivid memories of my number of attempts of getting my config files
+into code repository with varying level of success. With each app keeping
+configs in their own way - maintaining a GIT version is almost always
+impossible.&lt;/p&gt;
+
+&lt;p&gt;Last but not least, doing Alt-Tab to browse between myriad of apps plus the keys
+to jump to each applications window/buffer takes time.&lt;/p&gt;
+
+&lt;h1&gt;Setup&lt;/h1&gt;
+
+&lt;p&gt;After reading over various setups, basically the setup boiled down to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;iTerm.app - Really, Terminal.app is crappy. Linux/*nix users are fine.&lt;/li&gt;
+&lt;li&gt;Homebrew - If you are on Mac. Again, Linux/*nix users are fine.&lt;/li&gt;
+&lt;li&gt;MacVim - I dont use the GUI version but the homebrew version comes bundled
+with lot of goodies. Again, Linux/*nix users with latest version of vim would
+be fine.&lt;/li&gt;
+&lt;li&gt;tmux
+
+&lt;ul&gt;
+&lt;li&gt;Mac users may also want to read upon and install reattach-to-usernamespace
+although I have yet to have use of it but probably as I use this setup, more I
+will face the hurdle.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;mutt with sidebar-patch&lt;/li&gt;
+&lt;li&gt;WeeChat and BitlBee - irc/gtalk/twitter&lt;/li&gt;
+&lt;li&gt;Newsbeuter - Newsreader&lt;/li&gt;
+&lt;li&gt;cmus - Music player&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Personally, I like to have the same color scheme across all my apps but
+different people may have different likings. I use zenburn everywhere (there are
+themes for iTerm/various terminals/vim) but people have been reviewing
+solarized/tomorrow a lot.&lt;/p&gt;
+
+&lt;p&gt;Use your favorite package manager to install the above applications. Needless,
+to say - it is given that you setup all of your dotconf into a code repository.
+1000s of people have released their dotconf files on the internet. Its very
+interesting read through and see how people work. I would say 80% of things in
+my conf are picked up from others.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;It is important that you setup your terminal colortheme. Just setting up your
+editor or other app themes will not work.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;NOTE: In this post, I would explain some of the issues that I faced while having the
+setup on my Mac. Most of them was because of iTerm behaves and default function
+keys of Mac. You may or may not have these issues.&lt;/p&gt;
+
+&lt;h1&gt;Common buffer/window/pane movement&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;a.k.a - how I like to move around&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;As you would notice after getting using all the apps, there is a notion of
+splitting the main view window into sub windows. iTerm/tmux calls it
+windows/panes, vim has its windows which you can split, weechat with its windows
+etc. Its easy if you setup a common pattern in moving between them. An important
+thing to remember is to choose different keystrokes so that one app does not eat
+other apps key strokes. After long trial and error, I use the following
+keybindings for my window/pane movement.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;&amp;quot;iTerm&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;&amp;quot;Lot of command line apps do not recognise the Mac `cmd` so it helps&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;&amp;quot;to use them for Cocoa apps.&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Cmd-},{ - Move focus. I rarely jump to a specific window. Its just easier to&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;press the key couple of times more.&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt;&amp;quot;vim&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;The standard Ctrl+W keys. Its just not difficult.&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt;&amp;quot;tmux - try to map the vim movement commands&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;&amp;lt;prefix&amp;gt;h,j,k,l - left, down, top, right&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt;&amp;quot;weechat&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;&amp;quot;It really helps to read through: http://www.weechat.org/files/doc/devel/weechat_quickstart.en.html&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;&amp;lt;ctrl&amp;gt;h,j,k,l - left, down, top, right&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;My workflow&lt;/h1&gt;
+
+&lt;p&gt;Alright, the result. This is what am using these days:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Three tmux session running. Work development, hobby development, personal
+stuff (email, chat etc).&lt;/li&gt;
+&lt;li&gt;Two tmux tabs running (work or hobby development) and personal session.&lt;/li&gt;
+&lt;li&gt;Work session has the root folder of the project/vim plus panes for testing,
+shell etc.&lt;/li&gt;
+&lt;li&gt;mutt/weechat/newsbeuter and cmus/blog session.&lt;/li&gt;
+&lt;li&gt;I tend to create a new iTerm tab for something quick and dirty.
+new window.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;If I am working on backend project or something which does not involve constant
+look up of browser. I like to use the &lt;code&gt;full screen&lt;/code&gt; mode of iTerm. When I go
+home, I just detach my tmux session and start the same from home machine. And
+everything is as where I left. No need to reopen things in the browser, no need
+to worry about restarts. Sometimes, when I do need to restart the machine or
+session, I can get back up and running with scripts like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;tmux start-server
+tmux new-session -d -s personal -n mutt
+tmux new-window -t personal:2 -n chat
+tmux new-window -t personal:3 -n news
+tmux new-window -t personal:4 -n bitlbee
+tmux new-window -t personal:5 -n blog
+
+tmux send-keys -t personal:1 &lt;span class=&quot;s1&quot;&gt;&amp;#39;mutt&amp;#39;&lt;/span&gt; C-m
+tmux send-keys -t personal:4 &lt;span class=&quot;s1&quot;&gt;&amp;#39;bitlbee -D -n -v&amp;#39;&lt;/span&gt; C-m
+tmux send-keys -t personal:2 &lt;span class=&quot;s1&quot;&gt;&amp;#39;weechat-curses -a&amp;#39;&lt;/span&gt; C-m
+tmux send-keys -t personal:3 &lt;span class=&quot;s1&quot;&gt;&amp;#39;newsbeuter&amp;#39;&lt;/span&gt; C-m
+tmux send-keys -t personal:5 &lt;span class=&quot;s1&quot;&gt;&amp;#39;blog; tmux split-window -h; cmus&amp;#39;&lt;/span&gt; C-m
+
+tmux &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;-window -t personal:1
+tmux attach-session -d -t personal
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Shifting between various window is just a matter of right combination of
+keyboard movements. They may seem daunting but you will be amazed how powerful
+our brain is to grasp new stuff with enough training. I have been using this
+setup for just two weeks and I seem to recall most of the commands on instinct.&lt;/p&gt;
+
+&lt;p&gt;I hear you say &amp;ldquo;Pictures are worth thousand words&amp;rdquo;.&lt;/p&gt;
+
+&lt;iframe class=&quot;imgur-album&quot; width=&quot;100%&quot; height=&quot;550&quot; frameborder=&quot;0&quot;
+src=&quot;http://imgur.com/a/3ODp7/embed&quot;&gt;&lt;/iframe&gt;
+
+
+&lt;p&gt;&lt;em&gt;Edit:&lt;/em&gt; Added images on 2012-07-05 @ 13:32PST.&lt;/p&gt;
+
+&lt;h1&gt;Gotchas &amp;amp; Helpful References&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.drbunsen.org/text-triumvirate.html#fn:1&quot;&gt;Why this setup is awesome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;In your iTerm Profile preferences, select terminal to be reported as
+&lt;code&gt;xterm-256color&lt;/code&gt; and under &lt;code&gt;Keys&lt;/code&gt; - Let option key acts as +Esc. This wil make
+your life with command line apps much easier.&lt;/li&gt;
+&lt;li&gt;Make sure you upgrade your brew setup using &lt;code&gt;brew update&lt;/code&gt;. The version I had
+was having problem compiling WeeChat with &amp;ldquo;&amp;ndash;perl&amp;rdquo; and thus none of the perl
+scripts were running. They have support for other languages but until and
+unless, you have some specific needs - I have not seen much documentation on
+other language scripts for WeeChat.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://crunchbanglinux.org/wiki/howto/howto_setup_mutt_with_gmail_imap&quot;&gt;Setting up mutt with
+GMail&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/mxcl/homebrew/pull/4383&quot;&gt;Github issue #4383&lt;/a&gt; - for patches
+to install STFL/newsbeuter.&lt;/li&gt;
+&lt;li&gt;Default &lt;code&gt;brew install mutt&lt;/code&gt; will not work. You will need to add the extra
+option for &lt;code&gt;sidebar-patch&lt;/code&gt; to make it usable with your GMail labels.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;brew install weechat --python --perl&lt;/code&gt; and the first thing you should do is
+install
+&lt;a href=&quot;http://www.weechat.org/files/doc/devel/weechat_quickstart.en.html#plugins_scripts&quot;&gt;Weeget&lt;/a&gt;.
+Also, consider &lt;code&gt;/weeget install urlgrab&lt;/code&gt; &amp;amp; &lt;code&gt;/weeget install buffers.pl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.bitlbee.org/HowtoGtalk&quot;&gt;Connecting Bitlbee with GTalk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.bitlbee.org/HowtoTwitter&quot;&gt;Connecting Bitlbee with Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I have not yet figured out how to run BitlBee in daemon mode using launchctl.
+I followed up at this
+&lt;a href=&quot;http://forums.macrumors.com/showthread.php?t=791587&quot;&gt;topic&lt;/a&gt;. I will have to
+investigate further about this. This means, I have an extra window in my tmux
+session.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.wiseguysonly.com/2012/05/15/reading-html-email-from-within-mutt/&quot;&gt;Read HTML mails in mutt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://atechnologyjobisnoexcuse.com/2010/04/google-contacts-in-mutt-and-vim/&quot;&gt;Importing Google contacts in mutt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Why I support Arsenal/Germany at international football</title>
+   <link href="http://zachholman.com/posts/why-i-support-arsenal-germany-at-international-soccer"/>
+   <updated>2012-06-27T09:16:17-07:00</updated>
+   <id>http://zachholman.com/posts/why-i-support-arsenal-germany-at-international-soccer</id>
+   <content type="html">&lt;p&gt;At work, we have been getting together to watch some of the Euro 2012 games. We
+have supporters for all countries (Dutch/England being the most popular).
+Surprisingly, I am the only Germany supporter and I was asked for reasons
+supporting Germany even though they are known to be pretty boring team (yes -
+the attacking and fluid game that we see started with WC 2006).&lt;/p&gt;
+
+&lt;p&gt;This started up a discussion among us that as a citizen of neutral country (or
+when football is not so developed), why we choose our
+club/country to support. Couple of reasons that stood out prominently:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The first major tournament that you watch - My first big tournament that I
+followed with understanding was World Cup 1990 and West Germany won the cup.
+Without satellite/cable TV, the only games I could watch was WC. 1994 came and
+Germany didn&amp;rsquo;t really do any good. But come 1996, it won the Euro Cup with a
+dramatic final where Bieroff scored two goals late. Starting then, I have always
+supported Germany - not because they played great football but because they won
+the tournaments when I started watching football.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In and around 2000, they started showing the big European league games and
+soon enough all games from EPL and Champions League. It just so happened that
+all the friends who would watch the games supported Man U and I was looking for
+a different team to bring in the spice. Not knowing anything or anybody, I
+randomly chose (or maybe not so random) Arsenal and have been Gunners fan ever
+since. With time, as I learnt more about the team and Arsene - the more I
+started liking them. It also helped that during those years, the team mesmerized
+the whole world with their &lt;em&gt;invincible&lt;/em&gt; run of 49 games.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;As an expat, you tend to have a soft spot for the first major country you
+live. E.g. one of my colleague spent some time in Spain and thus is die-hard
+Spain supporter.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Your native language has a big effect on the country you follow. For me,
+English being almost first language, I tend to follow England league more then
+other. Thus I tend to support English clubs more often than not. A huge
+percentage of people I know in California support Barcelona/Real Madrid as
+Spanish being the most spoken language after English.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Last but not least, broadcasting rights of games that your national/satellite
+TV gets. I am pretty sure if they were Bundesliga instead of EPL in India, I
+would have probably picked up Stuttgart or Dortmund or Schalke as my favorite
+club.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;What are your stories? Leave them in comments.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; Your native language and first viewed big tournament shapes your
+supporting team/country.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>VIM Redux - Start thinking like a vimmer</title>
+   <link href="http://zachholman.com/posts/vim-redux-start-thinking-like-a-vimmer"/>
+   <updated>2012-06-25T20:37:38-07:00</updated>
+   <id>http://zachholman.com/posts/vim-redux-start-thinking-like-a-vimmer</id>
+   <content type="html">&lt;p&gt;I got introduced to VIM when I started my graduate school. My first job had me
+use Linux as our primary machine and I continued to use VIM for Python
+development.&lt;/p&gt;
+
+&lt;p&gt;Once I moved to my new (current) job, we all use Mac as our main system and I
+decided to try out some of the popular GUI editors specifically TextMate and
+Sublime Text 2.&lt;/p&gt;
+
+&lt;p&gt;After investing considerable amount of time between the two to learn, understand
+use it the way they visioned - I found something was missing. Not sure which
+part I didn&amp;rsquo;t like about the &amp;ldquo;GUI&amp;rdquo; editors but even with features like project
+management, grepping within multiple files etc. working out of box, editing was
+not as fun.&lt;/p&gt;
+
+&lt;p&gt;So I looked around to found inspiration to use VIM again. Luckily, as with
+everything else Google never fails and here are series of articles that you
+should really read upon whether you are beginner or an experienced VIM user. I
+believe they are able to give a very new understanding to the problem of editing
+with VIM.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/a/1220118&quot;&gt;Your problem with VIM is that you don&amp;rsquo;t grok vi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.viemu.com/a-why-vi-vim.html&quot;&gt;Why, oh WHY, do those #?@! nutheads use vi?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.networkcomputing.com/unixworld/tutorial/009/009.html&quot;&gt;The Vi/Ex Editor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;I hope these links inspire you to look into VIM again or just improve your
+knowledge.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Power of VIM: Increment argument number value in methods calls</title>
+   <link href="http://zachholman.com/posts/power-of-vim-increment-argument-number-value-in-methods-calls"/>
+   <updated>2012-06-21T15:27:48-07:00</updated>
+   <id>http://zachholman.com/posts/power-of-vim-increment-argument-number-value-in-methods-calls</id>
+   <content type="html">&lt;p&gt;Recently, I have had to write Scala code for a project at work. In real life, I tend to masquarade as Rails/UI developer. The project involves communicating to a PostgreSQL server and unlike Rails, Scala does not really have a good ORM framework, I had to write pure SQL (its been some years since I did that). The general pattern is:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scala&quot;&gt;&lt;span class=&quot;n&quot;&gt;pool&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fooQuery&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now during prototyping, you are not exactly sure which columns you will need to fetch to do your work. Sometimes, you have to insert column in between (I like to group similar type/table columns) and correspondingly you have to go back to the code and increase every column parameter by 1. This problem gives us a practical example of using macro and applying it to series of lines/selection. For this to work, I will assume that you have to added a column between id and name, thus you have to increment rest of the column argument by 1.&lt;/p&gt;
+
+&lt;p&gt;We place the cursor somewhere in the line containing name.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;qa              &lt;span class=&quot;s2&quot;&gt;&amp;quot;Start recording and store it register a&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;$T(             &amp;quot;&lt;/span&gt;Go till end and search backwards till &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+CTRL+A          &lt;span class=&quot;s2&quot;&gt;&amp;quot;Increment argument value by&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;q               &amp;quot;&lt;/span&gt;Quit recording
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you can apply the macro in multiple ways with the two most popular being:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;By replaying the macro &lt;a href=&quot;http://vim.wikia.com/wiki/Macros&quot;&gt;Macro Tip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Using the global &lt;code&gt;:g&lt;/code&gt; command &lt;a href=&quot;http://vim.wikia.com/wiki/Power_of_g&quot;&gt;Power of G&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;In our case, we will just visually select the block of lines and apply &lt;strong&gt;:&amp;lsquo;&amp;lt;,&amp;rsquo;&gt;normal @a&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;:&lt;span class=&quot;se&quot;&gt;\&amp;#39;&lt;/span&gt;&amp;lt;,&lt;span class=&quot;se&quot;&gt;\&amp;#39;&lt;/span&gt;&amp;gt;normal @a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>rsyslog and absence of /var/log/messages in Ubuntu</title>
+   <link href="http://zachholman.com/posts/rsyslog-and-absence-of-varlogmessages-in-ubuntu"/>
+   <updated>2012-03-19T00:00:00-07:00</updated>
+   <id>http://zachholman.com/posts/rsyslog-and-absence-of-varlogmessages-in-ubuntu</id>
+   <content type="html">&lt;p&gt;So I had to install LDAP on a recent Oneric machine. To see the logs, you have to set logLevel in slapd.conf which should put the logs in /var/log/syslog . Now if you want to log it separately in say /var/log/ldap.log - you have to update /etc/syslog.conf - but on my Oneric there is no /etc/syslog.conf. Turns out with Ubuntu Natty, we use rsyslog by default.&lt;/p&gt;
+
+&lt;p&gt;So we have to update /etc/rsyslog.conf&lt;/p&gt;
+
+&lt;p&gt;local4.*&lt;/p&gt;
+
+&lt;h2&gt;Where is /var/log/messages&lt;/h2&gt;
+
+&lt;p&gt;Another change with Natty is that there is no /var/log/messages and everything has been consolidated to log into &lt;strong&gt;/var/log/syslog&lt;/strong&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>jekyll eats up error from your writing</title>
+   <link href="http://zachholman.com/posts/jekyll-eating-up-errors"/>
+   <updated>2012-03-10T00:00:00-08:00</updated>
+   <id>http://zachholman.com/posts/jekyll-eating-up-errors</id>
+   <content type="html">&lt;p&gt;If you are like me and run &lt;strong&gt;jekyll &amp;ndash;auto &amp;ndash;server&lt;/strong&gt;, here is a warning.&lt;/p&gt;
+
+&lt;p&gt;While writing your post, if you end up making a mistake that fails a successful jekyll compilation after saving, jekyll will silently ignore it and move ahead. Thinking that everything is correct, if you preview your local server, it will remain at the previous state leaving your wondering whats wrong.&lt;/p&gt;
+
+&lt;p&gt;Hoping that its a bug, I restarted WEBRick without any success. Even &lt;strong&gt;jekyll &amp;ndash;server&lt;/strong&gt; does not throw up any error. Finally I did, &lt;strong&gt;jekyll &amp;ndash;server&lt;/strong&gt; but no success.&lt;/p&gt;
+
+&lt;p&gt;Both the command will silently eat up everything. I had to run&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;jekyll &amp;ndash;no-auto &amp;ndash;server&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;that actually stopped on an error to give me more details.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>rvm, Rails 3.1, capistrano, Amazon EC2 - my first basic capistrano deployment script</title>
+   <link href="http://zachholman.com/posts/rvm-rails31-capistrano-amazon-ec2"/>
+   <updated>2012-03-09T00:00:00-08:00</updated>
+   <id>http://zachholman.com/posts/rvm-rails31-capistrano-amazon-ec2</id>
+   <content type="html">&lt;p&gt;Even though we are still using Rails 2.x at work, I have been looking into Rails 3.1 for my personal projects and for learning Ruby and Rails. I have been using Rails for 6 months now but never had to write my own deployment script for a Rails app (I have used Fabric for previous Python projects) so this was my opportunity to learn it.&lt;/p&gt;
+
+&lt;p&gt;Recently, I registered for my personal account with EC2 which allows me to play with a free micro-instance for a year. Using one of the standard AMIs from &lt;a href=&quot;http://cloud-images.ubuntu.com/releases/11.10/release/&quot;&gt;Ubuntu Cloud Images&lt;/a&gt;, I setup a simple one app server using rvm, Rails 3.1, Passenger and nginx.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;blockquote&gt;&lt;p&gt;The ubuntu official AMIs create a basic server with ubuntu user. It seems the convention is to use /var/www/appname to put your
+application code but for simplicity I will just use the standard /home/ubuntu and /home/ubuntu/appname.
+More info at&lt;/p&gt;&lt;/blockquote&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;As is always the case with new tools, after reading upon the basic documentation on &lt;a href=&quot;https://github.com/capistrano/capistrano/wiki/2.x-Getting-Started&quot;&gt;Starting Up&lt;/a&gt; and &lt;a href=&quot;https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning&quot;&gt;Tutorial&lt;/a&gt;. Then a quick Googling to check if somebody has written a similar tutorial/basic script. Within two minutes, I come across &lt;a href=&quot;http://www.aaginskiy.com/technology/2011/02/deploying-rails-3-apps-with-capistrano/&quot;&gt;Artem&amp;rsquo;s Post&lt;/a&gt;. Not exactly similar but similar enough.&lt;/p&gt;
+
+&lt;p&gt;Taking inspiration from it, my first iteration:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bundler/capistrano&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;default_run_options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:pty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;myapp&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ubuntu&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:repository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&amp;quot;git@bitbucket.org:psykidellic/myapp.git&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:applicationdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/home/ubuntu/myapp&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;EC2-IPADDRESS&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#Repo and deploy strategy options&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:scm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;master&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#Deploy config&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#Keep a local git repo on the server you’re deploying to and simply run a fetch&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#from that rather than an entire clone&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy_via&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:remote_cache&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy_to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;applicationdir&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#ssh option. Right now, I am just using my devel machine key to deploy.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#Ideally, it should be own user. A good approach would be the same user for deployment&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#and checkout.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ssh_options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:forward_agent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#Since we have only one for now, use the more compressed server syntax.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#generally you set up roles.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:web&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:primary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# role :app, :domain&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# role :web, :domain&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# role :db, :domain, :primary =&amp;gt; true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# if you&amp;#39;re still using the script/reaper helper you will need&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# these http://github.com/rails/irs_process_scripts&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# If you are using Passenger mod_rails uncomment this:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:start&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:stop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:restart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:roles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:except&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:no_release&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;try_sudo&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; touch &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;tmp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;restart.txt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pretty easy. First round didnt work as it was asking for the user password. But using the normal security settings, ubuntu user does not have a password. This means we need to add our private key to our ssh-agent.&lt;/p&gt;
+
+&lt;p&gt;Ooops, need to add the EC2 private key to our agent. We can do this in two ways: a) ssh-add ~/YOUR_PATH_TO_KEY or b) add a option like:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;ssh_options[:keys] = [File.join(ENV[\&amp;ldquo;HOME\&amp;rdquo;], \&amp;ldquo;.ec2\&amp;rdquo;, \&amp;ldquo;EC2_KEY\&amp;rdquo;)]&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Second iteration, I get as described at &lt;a href=&quot;http://stackoverflow.com/questions/6310086/capistrano-git-deployment-could-not-create-work-tree-dir-permission-denied&quot;&gt;this StackOverflow post&lt;/a&gt;. I just chose to add:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;set :use_sudo, false&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE: In my case since the folders were already created in the setup path using root, I changed the ownership manually. You have been forwarned so don&amp;rsquo;t do it.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Third iteration,&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;sh: bundle: command not found&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;which means that the environment was not able to get the correct Ruby environment. I use rvm and a global Ruby version on my system. You just need to &lt;a href=&quot;https://rvm.beginrescueend.com/integration/capistrano/&quot;&gt;read the document&lt;/a&gt; and add the relevant lines.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;console&quot;&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&lt;/span&gt; cap deploy
+&lt;span class=&quot;gp&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#thats it&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;CAUTION:&lt;/strong&gt; This will not restart the nginx server. So as an added convenience, I just add to the file:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;after &amp;ldquo;deploy&amp;rdquo;, &amp;ldquo;deploy:restart&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Also, you will have to update nginx.conf to point to current folder as&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy_via&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:remote_cache&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;sets it up to do a fast checkout in a separate folder and can handle errors (if any).&lt;/p&gt;
+
+&lt;p&gt;So my final script, that works for me.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bundler/capistrano&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;default_run_options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:pty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#RVM specific stuff. Taken from: https://rvm.beginrescueend.com/integration/capistrano/&lt;/span&gt;
+&lt;span class=&quot;vg&quot;&gt;$:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unshift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expand_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;./lib&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;rvm_path&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# Add RVM&amp;#39;s lib directory to the load path.&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;rvm/capistrano&amp;quot;&lt;/span&gt;                  &lt;span class=&quot;c1&quot;&gt;# Load RVM&amp;#39;s capistrano plugin.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:rvm_ruby_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;1.9.2&amp;#39;&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;# Or whatever env you want it to run in.&lt;/span&gt;
+
+
+
+&lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;www&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quietewrite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;writer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bighugelabs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Write&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Space&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;appname&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;ubuntu&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:repository&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&amp;quot;git@bitbucket.org:psykidellic/appname.git&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:applicationdir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/home/ubuntu/appname&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;YOUR_HOST_OR_IP&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:use_sudo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#Repo and deploy strategy options&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:scm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:git&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:branch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;master&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#Deploy config&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#Keep a local git repo on the server you’re deploying to and simply run a fetch&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#from that rather than an entire clone&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy_via&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:remote_cache&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy_to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;applicationdir&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#ssh option. Right now, I am just using my devel machine key to deploy.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#Ideally, it should be own user. A good approach would be the same user for deployment&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#and checkout.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ssh_options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:keys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;HOME&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;.ec2&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;EC2_KEY&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ssh_options&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:forward_agent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#Since we have only one for now, use the more compressed server syntax.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#generally you set up roles.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;domain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:web&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:primary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# role :app, :domain&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# role :web, :domain&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# role :db, :domain, :primary =&amp;gt; true&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# if you&amp;#39;re still using the script/reaper helper you will need&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# these http://github.com/rails/irs_process_scripts&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# If you are using Passenger mod_rails uncomment this:&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:deploy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:start&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:stop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:restart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:roles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:except&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:no_release&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;try_sudo&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; touch &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;current_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;tmp&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;restart.txt&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;after&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;deploy&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;deploy:restart&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Amazon S3 bucket names - be very careful</title>
+   <link href="http://zachholman.com/posts/amazon-s3---careful-with-bucket-names"/>
+   <updated>2012-03-01T00:00:00-08:00</updated>
+   <id>http://zachholman.com/posts/amazon-s3---careful-with-bucket-names</id>
+   <content type="html">&lt;p&gt;As I am doing bunch of AWS related work, I create multiple buckets for testing purposes. Today, I created a bucket and by mistake chose the wrong region. Region matters as Paperclip generates the attachment url based on &lt;strong&gt;s3_host_name&lt;/strong&gt;. If you access the S3 item with a different starting hostname, Amazon will give you redirection notice.&lt;/p&gt;
+
+&lt;p&gt;After realising my mistake, I dropped the bucket and tried to create another one with the same name (using the correct region) and I get:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;A conflicting conditional operation is currently in progress against this resource. Please try again.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;The official reply from Amazon is:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;I strongly recommend against deleting a bucket that you want to keep. There&amp;rsquo;s never any guarantee that you will be able to create a new bucket with the same bucket name.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;(taken from &lt;a href=&quot;&quot;&gt;https://forums.aws.amazon.com/thread.jspa?threadID=37532&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;Luckily, this was bucket which I was going to use for testing so the name really didnt matter but if it was something for production, things could have gotten hairy.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>New year resolutions for 2012</title>
+   <link href="http://zachholman.com/posts/new-year-resolution-2012"/>
+   <updated>2012-01-03T21:36:00-08:00</updated>
+   <id>http://zachholman.com/posts/new-year-resolution-2012</id>
+   <content type="html">&lt;p&gt;First of all - Happy New Year to all my readers.&lt;/p&gt;
+
+&lt;p&gt;As is the norm, everybody makes a new year resolution list (with sliding
+scale of perseverance to complete the list). Here is mine for this year:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read as many books as I can &lt;a href=&quot;http://blamcast.net/articles/best-science-fiction-books&quot;&gt;from this list&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Since I have always been interested in having my own startup,
+another list of books to read &lt;a href=&quot;http://onstartups.com/tabid/3339/bid/75597/The-Big-List-The-Best-and-Worst-Startup-Stuff-In-2011.aspx&quot;&gt;about startups&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;After working with C/C++ and dramatically opposite Ruby/Python, its
+time for me to learn something &lt;strong&gt;in between&lt;/strong&gt; and my goal is to
+learn and write a simple progam in Scala.&lt;/li&gt;
+&lt;li&gt;Learn rock climbing. To fulfill this destiny, I have already join
+&lt;a href=&quot;http://www.touchstoneclimbing.com/&quot;&gt;Mission Cliffs&lt;/a&gt; which is just behind my workplace.&lt;/li&gt;
+&lt;li&gt;Cook more. I have been kinda slacking off on this after moving to
+SF.&lt;/li&gt;
+&lt;li&gt;Travel. 2011 was the worst year for me in terms of travelling and I
+plan to change that.&lt;/li&gt;
+&lt;li&gt;Last but not least, make 2012 better than 2011 which was not a
+particularly satisfying year for me.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>ssfs-bad-io</title>
+   <link href="http://zachholman.com/posts/sshfs-bad-io"/>
+   <updated>2011-10-25T14:29:00-07:00</updated>
+   <id>http://zachholman.com/posts/sshfs-bad-io</id>
+   <content type="html">&lt;p&gt;So at work, we have a flow where mount one folder over sshfs and almost
+everybody has a shell window open all time to work on this folder.
+Though recently, we had a network change and after I come get back to
+work, even simple commands like &lt;code&gt;cp&lt;/code&gt; or &lt;code&gt;ls&lt;/code&gt; would just stuck and even
+on parent folder of the mount. Doing a quick:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps aux | grep CURRENT_COMMAND
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;shows me that the process is hung with state &lt;strong&gt;S+&lt;/strong&gt; which according to
+manual means:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;S: Interruptible sleep
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Having a hunch that this is definitely related to sshfs and the network
+issues. After some time of Googling, came across &lt;a href=&quot;http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=565229&quot;&gt;bug report on
+sshfs&lt;/a&gt;. I did this to get out of the problem:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ps aux | grep sshfs
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; -9 PID
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;fusermount -u MOUNT
+&lt;span class=&quot;c&quot;&gt;#You need to do the above or you will get:&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#ls: cannot access manage: Transport endpoint is not connected&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sshfs AND_THE_REST
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hope it helps.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Setting up Xmonad and fun with xinitrc/xsession</title>
+   <link href="http://zachholman.com/posts/setting-up-xmonad-and-fun-with-xinitrc-slash-xsession"/>
+   <updated>2011-10-19T00:00:00-07:00</updated>
+   <id>http://zachholman.com/posts/setting-up-xmonad-and-fun-with-xinitrc-slash-xsession</id>
+   <content type="html">&lt;p&gt;Finally, after years of procastinating, I finally installed Xmonad on a
+new virtual machine that I have been setting up for another project.
+Since I have been doing almost everything new in the sphere of
+technology, might as well start a new experience with desktop
+environment.&lt;/p&gt;
+
+&lt;p&gt;Setting up Xmonad was a breeze with apt-get but the next step of setting
+up GDM to use xmonad for my session turned out to be more fun then I had
+imagined. When you start your Ubuntu you are presented with the login
+screen by GNOME. At this time, you can select various session/profile
+that you would like to use with the login. This information comes from
+files at &lt;code&gt;/usr/share/xession&lt;/code&gt;. One sample:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ini&quot;&gt;&lt;span class=&quot;k&quot;&gt;[Desktop Entry]&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Encoding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;UTF-8&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;XMonad&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Comment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Lightweight tiling window manager&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;xmonad&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;xmonad.png&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;XSession&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The above one is installed with xmonad and selecting the session while
+logging gives you the simplest &lt;code&gt;xmonad&lt;/code&gt; installation. Though this works,
+I wanted to configure something extra to my needs e.g. &lt;code&gt;gnome-session&lt;/code&gt;
+as it some of the window drawing look nicer (specifically Firefox,
+Chrome). So thinking that just like back in the days, I have to setup
+&lt;code&gt;.xinitrc&lt;/code&gt; file and it will work, I went ahead and created one with the
+details I needed. Logout and login and nothing happens. Figuring, I did
+something wrong I spent sometime making sure the config was correct to
+the best of my knowledge. Eventually, after much hassles and Googling,
+figured out Ubuntu uses &lt;code&gt;$HOME/.xsession&lt;/code&gt; file. With the knowledge, just
+doing:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;cp .xinitrc .xsession
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and selecting &lt;code&gt;User Defined Session&lt;/code&gt; in the login window and everybody
+is happy. In my last 30hours or about of using
+&lt;a href=&quot;xmonad&quot;&gt;http://www.xmonad.org&lt;/a&gt;, I am already loving it. No more time
+spent on resizing and moving around windows on my big monitor. Terminal
+is just &lt;code&gt;mod+space+return&lt;/code&gt; away and xterm with &lt;strong&gt;Droid Sans Mono&lt;/strong&gt; is
+simmply gorgeous.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Big changes and using blogofile with GitHub and BitBucket</title>
+   <link href="http://zachholman.com/posts/big-changes-and-using-blogofile-with-github-and-bitbucket"/>
+   <updated>2011-10-14T00:00:00-07:00</updated>
+   <id>http://zachholman.com/posts/big-changes-and-using-blogofile-with-github-and-bitbucket</id>
+   <content type="html">&lt;p&gt;Oh wow, its again almost 3 months before you see a new post from me.
+Couple of big changes in life that have happened over last couple of
+months.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I changed jobs and now I am a &lt;em&gt;Member of Technical Staff&lt;/em&gt; at
+&lt;a href=&quot;http://www.meraki.com&quot;&gt;Meraki&lt;/a&gt;. We make the easiest Cloud Managed Enterprise Networks.&lt;/li&gt;
+&lt;li&gt;The new job entails me to work on Ruby on Rails so from now you will
+see rather less Python and more Rails/JavaScript posts.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;On a side note, as a chronic habit - a new post would mean that I have
+changed my way of writing and hosting my blog. Maybe, changing my system
+forces me to write a blogpost. Anyway, long story short, even though
+Blogofile is great, working with Vaporfile and S3 was just not working
+out. Then I found out Steve’s post on &lt;a href=&quot;http://hgtip.com/tips/beginner/2009-10-13-free-hosting-at-bitbucket/&quot;&gt;Free Hosting at Bitbucket&lt;/a&gt;.
+Since I use BitBucket as my DVCS provider, I wanted to check it out.&lt;/p&gt;
+
+&lt;p&gt;Creating a new repository with name &lt;em&gt;psykidellic.bitbucket.org&lt;/em&gt; was not
+hard and pushing a build version of _site was even easier.
+Unfortunately, the way Bitbucket shows a static page is not compatible
+with Blogofile link generation. It would seem that blogofile creates
+links to post like
+&lt;em&gt;&lt;a href=&quot;http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/&quot;&gt;http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/&lt;/a&gt;&lt;/em&gt;
+whereas the final page is
+&lt;em&gt;&lt;a href=&quot;http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/index.html&quot;&gt;http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/index.html&lt;/a&gt;&lt;/em&gt;
+and Bitbucket does not default to index.html. So all the links redirect
+back to the main page. Maybe there is something wrong with my
+configuration but I was too bored to dig deeper. I have seen various
+posts about using Blogofile with Github page and quick Googling brought
+me to &lt;a href=&quot;http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/&quot;&gt;Manuels post&lt;/a&gt;. It uses &lt;em&gt;git submodule&lt;/em&gt; feature and reading upon
+similar Mercurial feature of &lt;a href=&quot;http://mercurial.selenic.com/wiki/Subrepository#Git_subrepositories&quot;&gt;subrepos&lt;/a&gt; say that &lt;em&gt;hg&lt;/em&gt; supports git as
+subrepos natively.&lt;/p&gt;
+
+&lt;p&gt;I like to keep my drafts private and thus the original repository is
+private at Bitbucket. But the user facing has to be public. So in no
+time, I had &lt;a href=&quot;http://psykidellic.github.com&quot;&gt;psykidellic.github.com&lt;/a&gt; up and running. Mercurial
+subrepos work great with git and you see the result. So now the flow of
+my post is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Continuously write drafts and commit.&lt;/li&gt;
+&lt;li&gt;When the time comes, blogofile build.&lt;/li&gt;
+&lt;li&gt;git add NEWFILES &amp;amp;&amp;amp; hg push&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt; I am planning to make the third part as one script which
+should be easy depending upon your needs.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Finding an item based on computed value</title>
+   <link href="http://zachholman.com/posts/finding-an-item-based-on-computed-value"/>
+   <updated>2011-06-08T00:00:00-07:00</updated>
+   <id>http://zachholman.com/posts/finding-an-item-based-on-computed-value</id>
+   <content type="html">&lt;p&gt;Recently, at work I had to implement some code which had the pattern:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;One could do this in a more Pythonic way as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;ne&quot;&gt;StopIteration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;found&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Blog moved to Blogofile - add Google Analytics</title>
+   <link href="http://zachholman.com/posts/blog-moved-to-blogofile-add-google-analytics"/>
+   <updated>2011-06-07T00:00:00-07:00</updated>
+   <id>http://zachholman.com/posts/blog-moved-to-blogofile-add-google-analytics</id>
+   <content type="html">&lt;p&gt;As a continuation from my last post, listed below are the other two
+changes that I have applied to my setup.&lt;/p&gt;
+
+&lt;h1&gt;Vaporfile fix&lt;/h1&gt;
+
+&lt;p&gt;As you would know, I am using &lt;a href=&quot;http://aws.amazon.com/s3/&quot;&gt;Amazon S3&lt;/a&gt; for this blog. I also use
+the excellent vaporfile script. After updating the second post
+yesterday, I found a bug with the script. After it updates an existing
+file (after matching the checksums), vaporfile fails to set the
+permission correctly. This results in &lt;code&gt;index.html&lt;/code&gt; to have incorrect
+access permission and you end up getting AccessDenied from Amazon when
+you try to access your blog.&lt;/p&gt;
+
+&lt;p&gt;After around 20 minutes of investigation, I found the error and the
+patch is available at &lt;a href=&quot;https://github.com/psykidellic/Vaporfile/commit/0a866ad8715bb4267d6ee4f5672764f4e54b7e8a&quot;&gt;my fork of the project&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Addition of Google Analytics&lt;/h2&gt;
+
+&lt;p&gt;Apart from Disqus, I believe Google Analytics is probably the next
+feature that almost everybody uses. I plan to submit this patch to
+Blogofile in coming days but you just need to add the following to
+&lt;code&gt;_config.py&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;### Google analytics integration&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;blog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;analytics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;enabled&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#### enter your &amp;#39;web property id&amp;#39; here&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;blog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;analytics&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;UA-XXXXXX-6&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and to &lt;code&gt;footer.mako&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;    ### Google analytics integration
+    blog.analytics.enabled = True
+    #### enter your &amp;#39;web property id&amp;#39; here
+    blog.analytics.id    = &amp;quot;UA-XXXXXX-6&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and to &lt;code&gt;footer.mako&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;    % if bf.config.blog.analytics.enabled:
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_gaq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_gaq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;_gaq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_setAccount&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;${bf.config.blog.analytics.id}&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;_gaq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;_trackPageview&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;text/javascript&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;https:&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://ssl&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://www&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.google-analytics.com/ga.js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parentNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;insertBefore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+    % endif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Blog moved to Blogofile</title>
+   <link href="http://zachholman.com/posts/blog-moved-to-blogofile"/>
+   <updated>2011-06-02T00:00:00-07:00</updated>
+   <id>http://zachholman.com/posts/blog-moved-to-blogofile</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;tl;dr&lt;/strong&gt; I would have saved couple of hours by just reading the mailing
+list.&lt;/p&gt;
+
+&lt;p&gt;The following post is very much inspired by &lt;a href=&quot;http://techspot.zzzeek.org/2010/12/06/my-blogofile-hacks/&quot;&gt;this entry&lt;/a&gt;. To get the
+blog up, I used &lt;code&gt;blogofile init simple_blog&lt;/code&gt; generating a minimal setup
+with no themes worked. I spent some time figuring out how to make my
+index page similar to chronological page. The docs was lacking on this
+part and in my eagerness, I went ahead and updated &lt;code&gt;index.html.mako&lt;/code&gt;
+with code from &lt;code&gt;chronological.mako&lt;/code&gt;. Realizing that its a criminal
+duplication of code, I was convinced that there has to be a better way.
+Quick walk through the mailing list pointed me to the &lt;a href=&quot;http://groups.google.com/group/blogofile-discuss/browse_thread/thread/292c32bfe35b8466&quot;&gt;following
+conversation&lt;/a&gt;. Unfortunately, contrary to what is mentioned in the
+list, I had to set &lt;strong&gt;blog.path = “”&lt;/strong&gt; in my &lt;code&gt;_config.py&lt;/code&gt;. Otherwise, all
+the links become &lt;strong&gt;[http://page/1][]&lt;/strong&gt; instead
+of &lt;strong&gt;[http://MYHOST/page/1][]&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Setting up syntax highlighting for code samples using Pygments turned
+out to be more work then expected. It seemed after &lt;a href=&quot;http://www.blogofile.com/demo/sample_posts.html&quot;&gt;reading&lt;/a&gt; and this
+post by &lt;a href=&quot;http://morgangoose.com/blog/2010/09/28/switching-to-blogofile/&quot;&gt;Morgan Goose&lt;/a&gt; led me to think that syntax highlighting will
+be automatically enabled. Unfortunately, it was not to be. I had to
+update the config file with (this options are present if you init
+blogofile.com):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;filters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;syntax_highlight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;style&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;murphy&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;filters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;syntax_highlight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;css_dir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/css&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;filters&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;syntax_highlight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preload_styles&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;murphy&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;blog&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post_default_filters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&amp;quot;rst&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;rst, syntax_highlight&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Apart from the above change, I also liked zzzeek’s changes to the
+&lt;code&gt;syntax_highlight.py&lt;/code&gt; which enables me write code samples using
+&lt;code&gt;#!python&lt;/code&gt; directive. Lets face some facts - it will be sometime before
+I post anything other than Python.&lt;/p&gt;
+
+&lt;p&gt;Next step is to get yourself registered with &lt;a href=&quot;http://www.disqus.com&quot;&gt;Disqus&lt;/a&gt; and setup
+Blogofile by adding to the config &lt;a href=&quot;file:&quot;&gt;file:&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;!python blog.disqus.enabled = True
+blog.disqus.name = “YOUR-DISQUS-APPNAME”&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;As a side note, if you are using &lt;code&gt;VIRTUALENV&lt;/code&gt; along with blogofile, do
+not forget to start your environment name with &lt;code&gt;_&lt;/code&gt;. Otherwise, blogofile
+will simply copy it to _site and it will get synced to your remote
+folder. I just use &lt;code&gt;_ENV&lt;/code&gt; instead of &lt;code&gt;ENV&lt;/code&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Welcome Back</title>
+   <link href="http://zachholman.com/posts/welcome-back"/>
+   <updated>2011-05-27T00:00:00-07:00</updated>
+   <id>http://zachholman.com/posts/welcome-back</id>
+   <content type="html">&lt;p&gt;Hello, after a long hiatus and multiple attempts to get back to
+blogging, I think the time ripe is to take another attempt. Recently, I
+read &lt;a href=&quot;http://techspot.zzzeek.org/2010/11/21/how-coders-blog/&quot;&gt;a great article&lt;/a&gt; by zzzeek which made a lot of sense. It seems
+that blogging would me much fun using the said workflow. Another &lt;a href=&quot;http://buffered.io/2011/02/15/now-powered-by-blogofile/&quot;&gt;blog
+post&lt;/a&gt; pointed out similar issues that I was having with my old
+Wordpress blog. It was just too much effort to login to your Wordpress
+account to even note down your thoughts as draft. Agreed, one can keep a
+folder of drafts in your personal code repository but lets face the fact
+- the path is just not smooth as we would like it to be.&lt;/p&gt;
+
+&lt;p&gt;This blog is generated using &lt;a href=&quot;http://www.blogofile.com/&quot;&gt;Blogofile&lt;/a&gt; and is hosted on Amazon S3
+using the excellent &lt;a href=&quot;http://blogofile.com/blog/2011/02/19/blogofile-on-amazon-s3/&quot;&gt;Vaporfile&lt;/a&gt; script. In my attempt to learn refresh
+my CSS knowledge, I have decided to have my own design. I will have
+another post soon describing the steps and custom modification I did to
+get the present setup.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>

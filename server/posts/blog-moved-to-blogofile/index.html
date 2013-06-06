@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      Blog moved to Blogofile &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/blog-moved-to-blogofile">Blog moved to Blogofile</a>
+  </h1>
+
+  <section class="byline">
+    June  2, 2011
+  </section>
+
+  <p><strong>tl;dr</strong> I would have saved couple of hours by just reading the mailing
+list.</p>
+
+<p>The following post is very much inspired by <a href="http://techspot.zzzeek.org/2010/12/06/my-blogofile-hacks/">this entry</a>. To get the
+blog up, I used <code>blogofile init simple_blog</code> generating a minimal setup
+with no themes worked. I spent some time figuring out how to make my
+index page similar to chronological page. The docs was lacking on this
+part and in my eagerness, I went ahead and updated <code>index.html.mako</code>
+with code from <code>chronological.mako</code>. Realizing that its a criminal
+duplication of code, I was convinced that there has to be a better way.
+Quick walk through the mailing list pointed me to the <a href="http://groups.google.com/group/blogofile-discuss/browse_thread/thread/292c32bfe35b8466">following
+conversation</a>. Unfortunately, contrary to what is mentioned in the
+list, I had to set <strong>blog.path = “”</strong> in my <code>_config.py</code>. Otherwise, all
+the links become <strong>[http://page/1][]</strong> instead
+of <strong>[http://MYHOST/page/1][]</strong>.</p>
+
+<p>Setting up syntax highlighting for code samples using Pygments turned
+out to be more work then expected. It seemed after <a href="http://www.blogofile.com/demo/sample_posts.html">reading</a> and this
+post by <a href="http://morgangoose.com/blog/2010/09/28/switching-to-blogofile/">Morgan Goose</a> led me to think that syntax highlighting will
+be automatically enabled. Unfortunately, it was not to be. I had to
+update the config file with (this options are present if you init
+blogofile.com):</p>
+
+<div class="highlight"><pre><code class="python"><span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">style</span>   <span class="o">=</span> <span class="s">&quot;murphy&quot;</span>
+<span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">css_dir</span> <span class="o">=</span> <span class="s">&quot;/css&quot;</span>
+<span class="n">filters</span><span class="o">.</span><span class="n">syntax_highlight</span><span class="o">.</span><span class="n">preload_styles</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;murphy&quot;</span><span class="p">]</span>
+
+<span class="n">blog</span><span class="o">.</span><span class="n">post_default_filters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&quot;rst&quot;</span><span class="p">:</span> <span class="s">&quot;rst, syntax_highlight&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Apart from the above change, I also liked zzzeek’s changes to the
+<code>syntax_highlight.py</code> which enables me write code samples using
+<code>#!python</code> directive. Lets face some facts - it will be sometime before
+I post anything other than Python.</p>
+
+<p>Next step is to get yourself registered with <a href="http://www.disqus.com">Disqus</a> and setup
+Blogofile by adding to the config <a href="file:">file:</a>:</p>
+
+<blockquote><p>!python blog.disqus.enabled = True
+blog.disqus.name = “YOUR-DISQUS-APPNAME”</p></blockquote>
+
+<p>As a side note, if you are using <code>VIRTUALENV</code> along with blogofile, do
+not forget to start your environment name with <code>_</code>. Otherwise, blogofile
+will simply copy it to _site and it will get synced to your remote
+folder. I just use <code>_ENV</code> instead of <code>ENV</code>.</p>
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

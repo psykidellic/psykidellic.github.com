@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      Big changes and using blogofile with GitHub and BitBucket &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/big-changes-and-using-blogofile-with-github-and-bitbucket">Big changes and using blogofile with GitHub and BitBucket</a>
+  </h1>
+
+  <section class="byline">
+    October 14, 2011
+  </section>
+
+  <p>Oh wow, its again almost 3 months before you see a new post from me.
+Couple of big changes in life that have happened over last couple of
+months.</p>
+
+<ul>
+<li>I changed jobs and now I am a <em>Member of Technical Staff</em> at
+<a href="http://www.meraki.com">Meraki</a>. We make the easiest Cloud Managed Enterprise Networks.</li>
+<li>The new job entails me to work on Ruby on Rails so from now you will
+see rather less Python and more Rails/JavaScript posts.</li>
+</ul>
+
+
+<p>On a side note, as a chronic habit - a new post would mean that I have
+changed my way of writing and hosting my blog. Maybe, changing my system
+forces me to write a blogpost. Anyway, long story short, even though
+Blogofile is great, working with Vaporfile and S3 was just not working
+out. Then I found out Steve’s post on <a href="http://hgtip.com/tips/beginner/2009-10-13-free-hosting-at-bitbucket/">Free Hosting at Bitbucket</a>.
+Since I use BitBucket as my DVCS provider, I wanted to check it out.</p>
+
+<p>Creating a new repository with name <em>psykidellic.bitbucket.org</em> was not
+hard and pushing a build version of _site was even easier.
+Unfortunately, the way Bitbucket shows a static page is not compatible
+with Blogofile link generation. It would seem that blogofile creates
+links to post like
+<em><a href="http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/">http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/</a></em>
+whereas the final page is
+<em><a href="http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/index.html">http://psykidellic.github.com/2011/06/08/finding-an-item-based-on-computed-value/index.html</a></em>
+and Bitbucket does not default to index.html. So all the links redirect
+back to the main page. Maybe there is something wrong with my
+configuration but I was too bored to dig deeper. I have seen various
+posts about using Blogofile with Github page and quick Googling brought
+me to <a href="http://manuel-ohlendorf.de/blog/2010/12/23/hosting-a-blogofile-blog-on-github-with-github-pages/">Manuels post</a>. It uses <em>git submodule</em> feature and reading upon
+similar Mercurial feature of <a href="http://mercurial.selenic.com/wiki/Subrepository#Git_subrepositories">subrepos</a> say that <em>hg</em> supports git as
+subrepos natively.</p>
+
+<p>I like to keep my drafts private and thus the original repository is
+private at Bitbucket. But the user facing has to be public. So in no
+time, I had <a href="http://psykidellic.github.com">psykidellic.github.com</a> up and running. Mercurial
+subrepos work great with git and you see the result. So now the flow of
+my post is:</p>
+
+<ul>
+<li>Continuously write drafts and commit.</li>
+<li>When the time comes, blogofile build.</li>
+<li>git add NEWFILES &amp;&amp; hg push</li>
+</ul>
+
+
+<p><strong>note:</strong> I am planning to make the third part as one script which
+should be easy depending upon your needs.</p>
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

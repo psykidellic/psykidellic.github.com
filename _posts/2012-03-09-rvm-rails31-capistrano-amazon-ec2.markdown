@@ -3,8 +3,6 @@ layout: post
 title: "rvm, Rails 3.1, capistrano, Amazon EC2 - my first basic capistrano deployment script"
 tags: [scripts]
 ---
-{% include JB/setup %}
-
 Even though we are still using Rails 2.x at work, I have been looking into Rails 3.1 for my personal projects and for learning Ruby and Rails. I have been using Rails for 6 months now but never had to write my own deployment script for a Rails app (I have used Fabric for previous Python projects) so this was my opportunity to learn it.
 
 Recently, I registered for my personal account with EC2 which allows me to play with a free micro-instance for a year. Using one of the standard AMIs from [Ubuntu Cloud Images](http://cloud-images.ubuntu.com/releases/11.10/release/), I setup a simple one app server using rvm, Rails 3.1, Passenger and nginx.

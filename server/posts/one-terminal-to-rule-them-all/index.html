@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      One terminal to rule them all - for the power users &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/one-terminal-to-rule-them-all">One terminal to rule them all - for the power users</a>
+  </h1>
+
+  <section class="byline">
+    June 28, 2012
+  </section>
+
+  <p>Couple of weeks back, while researching on completely unrelated topic, I came
+across various blog/references espousing the effectiveness of working on command
+line. Over years, I have noticed and have been fascinated by many who have
+absolutely fantastic in getting their job done from the command line. For as
+long as I remember, I have been thinking of moving to similar workflow but due
+to one reason or another, never took the effort to spend time to set it up.</p>
+
+<h1>Workflow</h1>
+
+<ul>
+<li>Editor for coding (since I have been doing Python/Ruby/Scala development
+lately, complete IDE have become redundant).</li>
+<li>Browser for GMail, Google Reader, Twitter, Facebook, Reddit, Browsing.</li>
+<li>The venerable Terminal.</li>
+</ul>
+
+
+<h1>Problems</h1>
+
+<p>Overtime, I tried using tools specific to things like Twitter, Facebook but the
+hassle of learning another tool, dealing with Adobe Air updates just made the
+whole process painful. Couple with that Mac updates needing restart, I would
+have to reopen everything again. Yes, there are ways/tools to set the apps that
+have to started etc. but overtime they are just hassle to maintain. I spent
+some time learning Quicksilver when I got my first Mac during college but since
+I had to move to use Linux almost exclusively, I never got the chance to master
+it.</p>
+
+<p>I still have vivid memories of my number of attempts of getting my config files
+into code repository with varying level of success. With each app keeping
+configs in their own way - maintaining a GIT version is almost always
+impossible.</p>
+
+<p>Last but not least, doing Alt-Tab to browse between myriad of apps plus the keys
+to jump to each applications window/buffer takes time.</p>
+
+<h1>Setup</h1>
+
+<p>After reading over various setups, basically the setup boiled down to:</p>
+
+<ul>
+<li>iTerm.app - Really, Terminal.app is crappy. Linux/*nix users are fine.</li>
+<li>Homebrew - If you are on Mac. Again, Linux/*nix users are fine.</li>
+<li>MacVim - I dont use the GUI version but the homebrew version comes bundled
+with lot of goodies. Again, Linux/*nix users with latest version of vim would
+be fine.</li>
+<li>tmux
+
+<ul>
+<li>Mac users may also want to read upon and install reattach-to-usernamespace
+although I have yet to have use of it but probably as I use this setup, more I
+will face the hurdle.</li>
+</ul>
+</li>
+<li>mutt with sidebar-patch</li>
+<li>WeeChat and BitlBee - irc/gtalk/twitter</li>
+<li>Newsbeuter - Newsreader</li>
+<li>cmus - Music player</li>
+</ul>
+
+
+<p>Personally, I like to have the same color scheme across all my apps but
+different people may have different likings. I use zenburn everywhere (there are
+themes for iTerm/various terminals/vim) but people have been reviewing
+solarized/tomorrow a lot.</p>
+
+<p>Use your favorite package manager to install the above applications. Needless,
+to say - it is given that you setup all of your dotconf into a code repository.
+1000s of people have released their dotconf files on the internet. Its very
+interesting read through and see how people work. I would say 80% of things in
+my conf are picked up from others.</p>
+
+<p><strong>It is important that you setup your terminal colortheme. Just setting up your
+editor or other app themes will not work.</strong></p>
+
+<p>NOTE: In this post, I would explain some of the issues that I faced while having the
+setup on my Mac. Most of them was because of iTerm behaves and default function
+keys of Mac. You may or may not have these issues.</p>
+
+<h1>Common buffer/window/pane movement</h1>
+
+<p><code>a.k.a - how I like to move around</code></p>
+
+<p>As you would notice after getting using all the apps, there is a notion of
+splitting the main view window into sub windows. iTerm/tmux calls it
+windows/panes, vim has its windows which you can split, weechat with its windows
+etc. Its easy if you setup a common pattern in moving between them. An important
+thing to remember is to choose different keystrokes so that one app does not eat
+other apps key strokes. After long trial and error, I use the following
+keybindings for my window/pane movement.</p>
+
+<div class="highlight"><pre><code class="console"><span class="go">&quot;iTerm</span>
+<span class="go">&quot;Lot of command line apps do not recognise the Mac `cmd` so it helps</span>
+<span class="go">&quot;to use them for Cocoa apps.</span>
+<span class="go">Cmd-},{ - Move focus. I rarely jump to a specific window. Its just easier to</span>
+<span class="go">press the key couple of times more.</span>
+
+<span class="go">&quot;vim</span>
+<span class="go">The standard Ctrl+W keys. Its just not difficult.</span>
+
+<span class="go">&quot;tmux - try to map the vim movement commands</span>
+<span class="go">&lt;prefix&gt;h,j,k,l - left, down, top, right</span>
+
+<span class="go">&quot;weechat</span>
+<span class="go">&quot;It really helps to read through: http://www.weechat.org/files/doc/devel/weechat_quickstart.en.html</span>
+<span class="go">&lt;ctrl&gt;h,j,k,l - left, down, top, right</span>
+</code></pre></div>
+
+
+<h1>My workflow</h1>
+
+<p>Alright, the result. This is what am using these days:</p>
+
+<ul>
+<li>Three tmux session running. Work development, hobby development, personal
+stuff (email, chat etc).</li>
+<li>Two tmux tabs running (work or hobby development) and personal session.</li>
+<li>Work session has the root folder of the project/vim plus panes for testing,
+shell etc.</li>
+<li>mutt/weechat/newsbeuter and cmus/blog session.</li>
+<li>I tend to create a new iTerm tab for something quick and dirty.
+new window.</li>
+</ul>
+
+
+<p>If I am working on backend project or something which does not involve constant
+look up of browser. I like to use the <code>full screen</code> mode of iTerm. When I go
+home, I just detach my tmux session and start the same from home machine. And
+everything is as where I left. No need to reopen things in the browser, no need
+to worry about restarts. Sometimes, when I do need to restart the machine or
+session, I can get back up and running with scripts like:</p>
+
+<div class="highlight"><pre><code class="bash">tmux start-server
+tmux new-session -d -s personal -n mutt
+tmux new-window -t personal:2 -n chat
+tmux new-window -t personal:3 -n news
+tmux new-window -t personal:4 -n bitlbee
+tmux new-window -t personal:5 -n blog
+
+tmux send-keys -t personal:1 <span class="s1">&#39;mutt&#39;</span> C-m
+tmux send-keys -t personal:4 <span class="s1">&#39;bitlbee -D -n -v&#39;</span> C-m
+tmux send-keys -t personal:2 <span class="s1">&#39;weechat-curses -a&#39;</span> C-m
+tmux send-keys -t personal:3 <span class="s1">&#39;newsbeuter&#39;</span> C-m
+tmux send-keys -t personal:5 <span class="s1">&#39;blog; tmux split-window -h; cmus&#39;</span> C-m
+
+tmux <span class="k">select</span>-window -t personal:1
+tmux attach-session -d -t personal
+</code></pre></div>
+
+
+<p>Shifting between various window is just a matter of right combination of
+keyboard movements. They may seem daunting but you will be amazed how powerful
+our brain is to grasp new stuff with enough training. I have been using this
+setup for just two weeks and I seem to recall most of the commands on instinct.</p>
+
+<p>I hear you say &ldquo;Pictures are worth thousand words&rdquo;.</p>
+
+<iframe class="imgur-album" width="100%" height="550" frameborder="0"
+src="http://imgur.com/a/3ODp7/embed"></iframe>
+
+
+<p><em>Edit:</em> Added images on 2012-07-05 @ 13:32PST.</p>
+
+<h1>Gotchas &amp; Helpful References</h1>
+
+<ul>
+<li><a href="http://www.drbunsen.org/text-triumvirate.html#fn:1">Why this setup is awesome</a></li>
+<li>In your iTerm Profile preferences, select terminal to be reported as
+<code>xterm-256color</code> and under <code>Keys</code> - Let option key acts as +Esc. This wil make
+your life with command line apps much easier.</li>
+<li>Make sure you upgrade your brew setup using <code>brew update</code>. The version I had
+was having problem compiling WeeChat with &ldquo;&ndash;perl&rdquo; and thus none of the perl
+scripts were running. They have support for other languages but until and
+unless, you have some specific needs - I have not seen much documentation on
+other language scripts for WeeChat.</li>
+<li><a href="http://crunchbanglinux.org/wiki/howto/howto_setup_mutt_with_gmail_imap">Setting up mutt with
+GMail</a></li>
+<li><a href="https://github.com/mxcl/homebrew/pull/4383">Github issue #4383</a> - for patches
+to install STFL/newsbeuter.</li>
+<li>Default <code>brew install mutt</code> will not work. You will need to add the extra
+option for <code>sidebar-patch</code> to make it usable with your GMail labels.</li>
+<li><code>brew install weechat --python --perl</code> and the first thing you should do is
+install
+<a href="http://www.weechat.org/files/doc/devel/weechat_quickstart.en.html#plugins_scripts">Weeget</a>.
+Also, consider <code>/weeget install urlgrab</code> &amp; <code>/weeget install buffers.pl</code></li>
+<li><a href="http://wiki.bitlbee.org/HowtoGtalk">Connecting Bitlbee with GTalk</a></li>
+<li><a href="http://wiki.bitlbee.org/HowtoTwitter">Connecting Bitlbee with Twitter</a></li>
+<li>I have not yet figured out how to run BitlBee in daemon mode using launchctl.
+I followed up at this
+<a href="http://forums.macrumors.com/showthread.php?t=791587">topic</a>. I will have to
+investigate further about this. This means, I have an extra window in my tmux
+session.</li>
+<li><a href="http://www.wiseguysonly.com/2012/05/15/reading-html-email-from-within-mutt/">Read HTML mails in mutt</a></li>
+<li><a href="http://atechnologyjobisnoexcuse.com/2010/04/google-contacts-in-mutt-and-vim/">Importing Google contacts in mutt</a></li>
+</ul>
+
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

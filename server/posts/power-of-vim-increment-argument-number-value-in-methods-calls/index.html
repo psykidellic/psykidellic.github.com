@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      Power of VIM: Increment argument number value in methods calls &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/power-of-vim-increment-argument-number-value-in-methods-calls">Power of VIM: Increment argument number value in methods calls</a>
+  </h1>
+
+  <section class="byline">
+    June 21, 2012
+  </section>
+
+  <p>Recently, I have had to write Scala code for a project at work. In real life, I tend to masquarade as Rails/UI developer. The project involves communicating to a PostgreSQL server and unlike Rails, Scala does not really have a good ORM framework, I had to write pure SQL (its been some years since I did that). The general pattern is:</p>
+
+<div class="highlight"><pre><code class="scala"><span class="n">pool</span><span class="o">.</span><span class="n">query</span><span class="o">(</span><span class="n">fooQuery</span><span class="o">)</span> <span class="o">{</span> <span class="n">rs</span> <span class="k">=&gt;</span>
+  <span class="k">while</span> <span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="n">next</span><span class="o">())</span> <span class="o">{</span>
+    <span class="n">id</span> <span class="k">=</span> <span class="n">rs</span><span class="o">.</span><span class="n">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+    <span class="n">name</span> <span class="k">=</span> <span class="n">getString</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+<p>Now during prototyping, you are not exactly sure which columns you will need to fetch to do your work. Sometimes, you have to insert column in between (I like to group similar type/table columns) and correspondingly you have to go back to the code and increase every column parameter by 1. This problem gives us a practical example of using macro and applying it to series of lines/selection. For this to work, I will assume that you have to added a column between id and name, thus you have to increment rest of the column argument by 1.</p>
+
+<p>We place the cursor somewhere in the line containing name.</p>
+
+<div class="highlight"><pre><code class="bash">qa              <span class="s2">&quot;Start recording and store it register a</span>
+<span class="s2">$T(             &quot;</span>Go till end and search backwards till <span class="o">(</span>
+CTRL+A          <span class="s2">&quot;Increment argument value by</span>
+<span class="s2">q               &quot;</span>Quit recording
+</code></pre></div>
+
+
+<p>Now you can apply the macro in multiple ways with the two most popular being:</p>
+
+<ul>
+<li>By replaying the macro <a href="http://vim.wikia.com/wiki/Macros">Macro Tip</a></li>
+<li>Using the global <code>:g</code> command <a href="http://vim.wikia.com/wiki/Power_of_g">Power of G</a></li>
+</ul>
+
+
+<p>In our case, we will just visually select the block of lines and apply <strong>:&lsquo;&lt;,&rsquo;>normal @a</strong>.</p>
+
+<div class="highlight"><pre><code class="bash">:<span class="se">\&#39;</span>&lt;,<span class="se">\&#39;</span>&gt;normal @a
+</code></pre></div>
+
+
+
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

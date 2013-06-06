@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      Setting up Xmonad and fun with xinitrc/xsession &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/setting-up-xmonad-and-fun-with-xinitrc-slash-xsession">Setting up Xmonad and fun with xinitrc/xsession</a>
+  </h1>
+
+  <section class="byline">
+    October 19, 2011
+  </section>
+
+  <p>Finally, after years of procastinating, I finally installed Xmonad on a
+new virtual machine that I have been setting up for another project.
+Since I have been doing almost everything new in the sphere of
+technology, might as well start a new experience with desktop
+environment.</p>
+
+<p>Setting up Xmonad was a breeze with apt-get but the next step of setting
+up GDM to use xmonad for my session turned out to be more fun then I had
+imagined. When you start your Ubuntu you are presented with the login
+screen by GNOME. At this time, you can select various session/profile
+that you would like to use with the login. This information comes from
+files at <code>/usr/share/xession</code>. One sample:</p>
+
+<div class="highlight"><pre><code class="ini"><span class="k">[Desktop Entry]</span>
+<span class="na">Encoding</span><span class="o">=</span><span class="s">UTF-8</span>
+<span class="na">Name</span><span class="o">=</span><span class="s">XMonad</span>
+<span class="na">Comment</span><span class="o">=</span><span class="s">Lightweight tiling window manager</span>
+<span class="na">Exec</span><span class="o">=</span><span class="s">xmonad</span>
+<span class="na">Icon</span><span class="o">=</span><span class="s">xmonad.png</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">XSession</span>
+</code></pre></div>
+
+
+<p>The above one is installed with xmonad and selecting the session while
+logging gives you the simplest <code>xmonad</code> installation. Though this works,
+I wanted to configure something extra to my needs e.g. <code>gnome-session</code>
+as it some of the window drawing look nicer (specifically Firefox,
+Chrome). So thinking that just like back in the days, I have to setup
+<code>.xinitrc</code> file and it will work, I went ahead and created one with the
+details I needed. Logout and login and nothing happens. Figuring, I did
+something wrong I spent sometime making sure the config was correct to
+the best of my knowledge. Eventually, after much hassles and Googling,
+figured out Ubuntu uses <code>$HOME/.xsession</code> file. With the knowledge, just
+doing:</p>
+
+<div class="highlight"><pre><code class="sh">cp .xinitrc .xsession
+</code></pre></div>
+
+
+<p>and selecting <code>User Defined Session</code> in the login window and everybody
+is happy. In my last 30hours or about of using
+<a href="xmonad">http://www.xmonad.org</a>, I am already loving it. No more time
+spent on resizing and moving around windows on my big monitor. Terminal
+is just <code>mod+space+return</code> away and xterm with <strong>Droid Sans Mono</strong> is
+simmply gorgeous.</p>
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

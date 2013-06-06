@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      Using tmux to copy text between two sessions &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/using-tmux-to-copy-text-between-two-sessions">Using tmux to copy text between two sessions</a>
+  </h1>
+
+  <section class="byline">
+    July  5, 2012
+  </section>
+
+  <p>As I mentioned in my previous post, I did not yet find a problem where I could
+effectively use the cut-paste between tmux buffers. But now I do. This post will
+describe the steps to copy text from one of your remote session to local session
+using tmux buffers.</p>
+
+<p><strong>NOTE:</strong> You can probably do the same using Mac OS X buffer (using mouse to
+select text and Cmd-C/Cmd-V). This post will show you a way without moving your
+hand away from your keyboard, which I believe is much more efficient. If you are
+Linux/*nix, check out this <a href="http://unix.stackexchange.com/questions/15715/getting-tmux-to-copy-a-buffer-to-the-clipboard">stackexchange
+question</a>.</p>
+
+<div class="highlight"><pre><code class="bash">setw -g mode-keys vi
+unbind p
+<span class="nb">bind </span>p paste-buffer
+<span class="nb">bind</span> -t vi-copy v begin-selection
+<span class="nb">bind</span> -t vi-copy y copy-selection
+<span class="nb">bind</span> -t vi-copy Escape cancel
+<span class="nb">bind </span>y run <span class="s2">&quot;tmux save-buffer - | reattach-to-user-namespace pbcopy&quot;</span>
+</code></pre></div>
+
+
+<p>Here is a perfect use case example.</p>
+
+<ul>
+<li>Open a file in your local session.</li>
+<li>Split your tmux pane.</li>
+<li>Login to a remote server</li>
+<li>Open a text editor.</li>
+<li>Get into copy-mode by pressing <code>&lt;prefix&gt;[</code></li>
+<li>Select lines of text pressing <code>v</code>. You can use vi movement commands too</li>
+<li><code>y</code> to yank to tmux buffer</li>
+<li><code>Esc</code> to get out of copy-mode.</li>
+<li>Move to your local session pane.</li>
+<li>Get in insert mode in vim.</li>
+<li><code>&lt;prefix&gt;p</code> to paste from the tmux buffer.</li>
+</ul>
+
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

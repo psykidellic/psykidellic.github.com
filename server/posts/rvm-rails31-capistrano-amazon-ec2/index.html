@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      rvm, Rails 3.1, capistrano, Amazon EC2 - my first basic capistrano deployment script &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/rvm-rails31-capistrano-amazon-ec2">rvm, Rails 3.1, capistrano, Amazon EC2 - my first basic capistrano deployment script</a>
+  </h1>
+
+  <section class="byline">
+    March  9, 2012
+  </section>
+
+  <p>Even though we are still using Rails 2.x at work, I have been looking into Rails 3.1 for my personal projects and for learning Ruby and Rails. I have been using Rails for 6 months now but never had to write my own deployment script for a Rails app (I have used Fabric for previous Python projects) so this was my opportunity to learn it.</p>
+
+<p>Recently, I registered for my personal account with EC2 which allows me to play with a free micro-instance for a year. Using one of the standard AMIs from <a href="http://cloud-images.ubuntu.com/releases/11.10/release/">Ubuntu Cloud Images</a>, I setup a simple one app server using rvm, Rails 3.1, Passenger and nginx.</p>
+
+<blockquote><blockquote><p>The ubuntu official AMIs create a basic server with ubuntu user. It seems the convention is to use /var/www/appname to put your
+application code but for simplicity I will just use the standard /home/ubuntu and /home/ubuntu/appname.
+More info at</p></blockquote></blockquote>
+
+<p>As is always the case with new tools, after reading upon the basic documentation on <a href="https://github.com/capistrano/capistrano/wiki/2.x-Getting-Started">Starting Up</a> and <a href="https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning">Tutorial</a>. Then a quick Googling to check if somebody has written a similar tutorial/basic script. Within two minutes, I come across <a href="http://www.aaginskiy.com/technology/2011/02/deploying-rails-3-apps-with-capistrano/">Artem&rsquo;s Post</a>. Not exactly similar but similar enough.</p>
+
+<p>Taking inspiration from it, my first iteration:</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">&#39;bundler/capistrano&#39;</span>
+<span class="n">default_run_options</span><span class="o">[</span><span class="ss">:pty</span><span class="o">]</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="n">set</span> <span class="ss">:application</span><span class="p">,</span> <span class="s2">&quot;myapp&quot;</span>
+<span class="n">set</span> <span class="ss">:user</span><span class="p">,</span> <span class="s2">&quot;ubuntu&quot;</span>
+<span class="n">set</span> <span class="ss">:repository</span><span class="p">,</span>  <span class="s2">&quot;git@bitbucket.org:psykidellic/myapp.git&quot;</span>
+<span class="n">set</span> <span class="ss">:applicationdir</span><span class="p">,</span> <span class="s2">&quot;/home/ubuntu/myapp&quot;</span>
+<span class="n">set</span> <span class="ss">:domain</span><span class="p">,</span> <span class="s2">&quot;EC2-IPADDRESS&quot;</span>
+
+<span class="c1">#Repo and deploy strategy options</span>
+<span class="n">set</span> <span class="ss">:scm</span><span class="p">,</span> <span class="ss">:git</span>
+<span class="n">set</span> <span class="ss">:branch</span><span class="p">,</span> <span class="s2">&quot;master&quot;</span>
+<span class="c1">#Deploy config</span>
+<span class="c1">#Keep a local git repo on the server you’re deploying to and simply run a fetch</span>
+<span class="c1">#from that rather than an entire clone</span>
+<span class="n">set</span> <span class="ss">:deploy_via</span><span class="p">,</span> <span class="ss">:remote_cache</span>
+<span class="n">set</span> <span class="ss">:deploy_to</span><span class="p">,</span> <span class="n">applicationdir</span>
+
+<span class="c1">#ssh option. Right now, I am just using my devel machine key to deploy.</span>
+<span class="c1">#Ideally, it should be own user. A good approach would be the same user for deployment</span>
+<span class="c1">#and checkout.</span>
+<span class="n">ssh_options</span><span class="o">[</span><span class="ss">:forward_agent</span><span class="o">]</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="c1">#Since we have only one for now, use the more compressed server syntax.</span>
+<span class="c1">#generally you set up roles.</span>
+<span class="n">server</span> <span class="n">domain</span><span class="p">,</span> <span class="ss">:app</span><span class="p">,</span> <span class="ss">:web</span><span class="p">,</span> <span class="ss">:db</span><span class="p">,</span> <span class="ss">:primary</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="c1"># role :app, :domain</span>
+<span class="c1"># role :web, :domain</span>
+<span class="c1"># role :db, :domain, :primary =&gt; true</span>
+
+<span class="c1"># if you&#39;re still using the script/reaper helper you will need</span>
+<span class="c1"># these http://github.com/rails/irs_process_scripts</span>
+
+<span class="c1"># If you are using Passenger mod_rails uncomment this:</span>
+<span class="n">namespace</span> <span class="ss">:deploy</span> <span class="k">do</span>
+  <span class="n">task</span> <span class="ss">:start</span> <span class="k">do</span> <span class="p">;</span> <span class="k">end</span>
+  <span class="n">task</span> <span class="ss">:stop</span> <span class="k">do</span> <span class="p">;</span> <span class="k">end</span>
+  <span class="n">task</span> <span class="ss">:restart</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span><span class="p">,</span> <span class="ss">:except</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:no_release</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span> <span class="k">do</span>
+    <span class="n">run</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">try_sudo</span><span class="si">}</span><span class="s2"> touch </span><span class="si">#{</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span><span class="s1">&#39;tmp&#39;</span><span class="p">,</span><span class="s1">&#39;restart.txt&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+
+<p>Pretty easy. First round didnt work as it was asking for the user password. But using the normal security settings, ubuntu user does not have a password. This means we need to add our private key to our ssh-agent.</p>
+
+<p>Ooops, need to add the EC2 private key to our agent. We can do this in two ways: a) ssh-add ~/YOUR_PATH_TO_KEY or b) add a option like:</p>
+
+<blockquote><p>ssh_options[:keys] = [File.join(ENV[\&ldquo;HOME\&rdquo;], \&ldquo;.ec2\&rdquo;, \&ldquo;EC2_KEY\&rdquo;)]</p></blockquote>
+
+<p>Second iteration, I get as described at <a href="http://stackoverflow.com/questions/6310086/capistrano-git-deployment-could-not-create-work-tree-dir-permission-denied">this StackOverflow post</a>. I just chose to add:</p>
+
+<blockquote><p>set :use_sudo, false</p></blockquote>
+
+<p><strong>NOTE: In my case since the folders were already created in the setup path using root, I changed the ownership manually. You have been forwarned so don&rsquo;t do it.</strong></p>
+
+<p>Third iteration,</p>
+
+<blockquote><p>sh: bundle: command not found</p></blockquote>
+
+<p>which means that the environment was not able to get the correct Ruby environment. I use rvm and a global Ruby version on my system. You just need to <a href="https://rvm.beginrescueend.com/integration/capistrano/">read the document</a> and add the relevant lines.</p>
+
+<div class="highlight"><pre><code class="console"><span class="gp">&gt;</span> cap deploy
+<span class="gp">&gt;</span> <span class="c">#thats it</span>
+</code></pre></div>
+
+
+<p><strong>CAUTION:</strong> This will not restart the nginx server. So as an added convenience, I just add to the file:</p>
+
+<blockquote><p>after &ldquo;deploy&rdquo;, &ldquo;deploy:restart&rdquo;</p></blockquote>
+
+<p>Also, you will have to update nginx.conf to point to current folder as</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="n">set</span> <span class="ss">:deploy_via</span><span class="p">,</span> <span class="ss">:remote_cache</span>
+</code></pre></div>
+
+
+<p>sets it up to do a fast checkout in a separate folder and can handle errors (if any).</p>
+
+<p>So my final script, that works for me.</p>
+
+<div class="highlight"><pre><code class="ruby"><span class="nb">require</span> <span class="s1">&#39;bundler/capistrano&#39;</span>
+<span class="n">default_run_options</span><span class="o">[</span><span class="ss">:pty</span><span class="o">]</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="c1">#RVM specific stuff. Taken from: https://rvm.beginrescueend.com/integration/capistrano/</span>
+<span class="vg">$:</span><span class="o">.</span><span class="n">unshift</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="s1">&#39;./lib&#39;</span><span class="p">,</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;rvm_path&#39;</span><span class="o">]</span><span class="p">))</span> <span class="c1"># Add RVM&#39;s lib directory to the load path.</span>
+<span class="nb">require</span> <span class="s2">&quot;rvm/capistrano&quot;</span>                  <span class="c1"># Load RVM&#39;s capistrano plugin.</span>
+<span class="n">set</span> <span class="ss">:rvm_ruby_string</span><span class="p">,</span> <span class="s1">&#39;1.9.2&#39;</span>        <span class="c1"># Or whatever env you want it to run in.</span>
+
+
+
+<span class="n">of</span> <span class="n">www</span><span class="o">.</span><span class="n">quietewrite</span><span class="o">.</span><span class="n">com</span><span class="p">,</span> <span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">writer</span><span class="o">.</span><span class="n">bighugelabs</span><span class="o">.</span><span class="n">com</span> <span class="ow">and</span> <span class="no">Write</span> <span class="no">Space</span>
+<span class="n">set</span> <span class="ss">:application</span><span class="p">,</span> <span class="s2">&quot;appname&quot;</span>
+<span class="n">set</span> <span class="ss">:user</span><span class="p">,</span> <span class="s2">&quot;ubuntu&quot;</span>
+<span class="n">set</span> <span class="ss">:repository</span><span class="p">,</span>  <span class="s2">&quot;git@bitbucket.org:psykidellic/appname.git&quot;</span>
+<span class="n">set</span> <span class="ss">:applicationdir</span><span class="p">,</span> <span class="s2">&quot;/home/ubuntu/appname&quot;</span>
+<span class="n">set</span> <span class="ss">:domain</span><span class="p">,</span> <span class="s2">&quot;YOUR_HOST_OR_IP&quot;</span>
+<span class="n">set</span> <span class="ss">:use_sudo</span><span class="p">,</span> <span class="kp">false</span>
+
+<span class="c1">#Repo and deploy strategy options</span>
+<span class="n">set</span> <span class="ss">:scm</span><span class="p">,</span> <span class="ss">:git</span>
+<span class="n">set</span> <span class="ss">:branch</span><span class="p">,</span> <span class="s2">&quot;master&quot;</span>
+<span class="c1">#Deploy config</span>
+<span class="c1">#Keep a local git repo on the server you’re deploying to and simply run a fetch</span>
+<span class="c1">#from that rather than an entire clone</span>
+<span class="n">set</span> <span class="ss">:deploy_via</span><span class="p">,</span> <span class="ss">:remote_cache</span>
+<span class="n">set</span> <span class="ss">:deploy_to</span><span class="p">,</span> <span class="n">applicationdir</span>
+
+<span class="c1">#ssh option. Right now, I am just using my devel machine key to deploy.</span>
+<span class="c1">#Ideally, it should be own user. A good approach would be the same user for deployment</span>
+<span class="c1">#and checkout.</span>
+<span class="n">ssh_options</span><span class="o">[</span><span class="ss">:keys</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;HOME&quot;</span><span class="o">]</span><span class="p">,</span> <span class="s2">&quot;.ec2&quot;</span><span class="p">,</span> <span class="s2">&quot;EC2_KEY&quot;</span><span class="p">)</span><span class="o">]</span>
+<span class="n">ssh_options</span><span class="o">[</span><span class="ss">:forward_agent</span><span class="o">]</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="c1">#Since we have only one for now, use the more compressed server syntax.</span>
+<span class="c1">#generally you set up roles.</span>
+<span class="n">server</span> <span class="n">domain</span><span class="p">,</span> <span class="ss">:app</span><span class="p">,</span> <span class="ss">:web</span><span class="p">,</span> <span class="ss">:db</span><span class="p">,</span> <span class="ss">:primary</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="c1"># role :app, :domain</span>
+<span class="c1"># role :web, :domain</span>
+<span class="c1"># role :db, :domain, :primary =&gt; true</span>
+
+<span class="c1"># if you&#39;re still using the script/reaper helper you will need</span>
+<span class="c1"># these http://github.com/rails/irs_process_scripts</span>
+
+<span class="c1"># If you are using Passenger mod_rails uncomment this:</span>
+<span class="n">namespace</span> <span class="ss">:deploy</span> <span class="k">do</span>
+  <span class="n">task</span> <span class="ss">:start</span> <span class="k">do</span> <span class="p">;</span> <span class="k">end</span>
+  <span class="n">task</span> <span class="ss">:stop</span> <span class="k">do</span> <span class="p">;</span> <span class="k">end</span>
+  <span class="n">task</span> <span class="ss">:restart</span><span class="p">,</span> <span class="ss">:roles</span> <span class="o">=&gt;</span> <span class="ss">:app</span><span class="p">,</span> <span class="ss">:except</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:no_release</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span> <span class="k">do</span>
+    <span class="n">run</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">try_sudo</span><span class="si">}</span><span class="s2"> touch </span><span class="si">#{</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span><span class="s1">&#39;tmp&#39;</span><span class="p">,</span><span class="s1">&#39;restart.txt&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">after</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span> <span class="s2">&quot;deploy:restart&quot;</span>
+</code></pre></div>
+
+
+
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

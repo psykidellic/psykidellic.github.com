@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      Installing and developing Android applications on command line in OS X &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/installing-and-developing-android-applications-on-command-line-in-os-x">Installing and developing Android applications on command line in OS X</a>
+  </h1>
+
+  <section class="byline">
+    July  3, 2012
+  </section>
+
+  <p>Who wants Eclipse when you can use vim like a <code>vimmer</code>. This document will help
+you get ready and develop Android applications from command line.</p>
+
+<p>As usual, without saying - if you have not yet, <a href="http://mxcl.github.com/homebrew/">Get
+Homebrew</a>. This post also assumes that you
+have installed the command line tools from XCode and
+<a href="http://ant.apache.org/">Ant</a>.</p>
+
+<h1>Steps</h1>
+
+<h2>Install Android SDK</h2>
+
+<p><code>brew install android-sdk</code></p>
+
+<div class="highlight"><pre><code class="console"><span class="go">==&gt; Downloading http://dl.google.com/android/android-sdk_r20-macosx.zip</span>
+<span class="gp">#</span><span class="c">####################################################################### 100.0%\</span>
+<span class="go">==&gt; Caveats</span>
+<span class="go">Now run the `android&#39; tool to install the actual SDK stuff.</span>
+
+<span class="go">The Android-SDK location for IDEs such as Eclipse, IntelliJ etc is:</span>
+<span class="go">  /usr/local/Cellar/android-sdk/r20</span>
+
+<span class="go"> you will have to install the platform-tools and docs every time this formula</span>
+<span class="go"> updates. if you want to try and fix this then see the comment in this formula.</span>
+
+<span class="go"> you may need to add the following to your .bashrc:</span>
+<span class="go">   export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20</span>
+<span class="go">   ==&gt; Summary</span>
+<span class="go">   /usr/local/Cellar/android-sdk/r20: 444 files, 70M, built in 2.1 minutes</span>
+</code></pre></div>
+
+
+<p>This will only install the <em>Android SDK Manager</em>. None of the actual SDK or
+anything is installed.</p>
+
+<p>As suggested by Homebrewa, add the lines to your <code>.bashrc</code>. You can start the
+manager by typing <code>android</code>. Generally, I like to install a version from every
+major release (so that I can quickly debug things out if necessary). You can
+choose whichever version you want.</p>
+
+<h2>Bootstrap your project for specific target</h2>
+
+<p>Remember, we had installed multiple version of SDK. We have to setup an Android
+Virtual Device for it and setup the project for the target.</p>
+
+<p><code>android list target</code></p>
+
+<div class="highlight"><pre><code class="bash">Available Android targets:
+id: 1 or <span class="s2">&quot;android-10&quot;</span>
+     Name: Android 2.3.3
+     Type: Platform
+     API level: 10
+     Revision: 2
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WVGA800 <span class="o">(</span>default<span class="o">)</span>, WVGA854
+     ABIs : armeabi
+id: 2 or <span class="s2">&quot;android-13&quot;</span>
+     Name: Android 3.2
+     Type: Platform
+     API level: 13
+     Revision: 1
+     Skins: WXGA <span class="o">(</span>default<span class="o">)</span>
+     ABIs : armeabi
+id: 3 or <span class="s2">&quot;android-15&quot;</span>
+     Name: Android 4.0.3
+     Type: Platform
+     API level: 15
+     Revision: 3
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 <span class="o">(</span>default<span class="o">)</span>, WVGA854, WXGA720, WXGA800
+     ABIs : armeabi-v7a
+id: 4 or <span class="s2">&quot;android-16&quot;</span>
+     Name: Android 4.1
+     Type: Platform
+     API level: 16
+     Revision: 1
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 <span class="o">(</span>default<span class="o">)</span>, WVGA854, WXGA720, WXGA800, WXGA800-7in
+     ABIs : armeabi-v7a
+</code></pre></div>
+
+
+<p><code>android create avd --target 1 --name yourprojectname</code></p>
+
+<div class="highlight"><pre><code class="bash"><span class="nv">$:</span> android create avd --target 1 --name param
+Auto-selecting single ABI armeabi
+Android 2.3.3 is a basic Android platform.
+Do you wish to create a custom hardware profile <span class="o">[</span>no<span class="o">]</span>
+Created AVD <span class="s1">&#39;param&#39;</span> based on Android 2.3.3, ARM <span class="o">(</span>armeabi<span class="o">)</span> processor,
+with the following hardware config:
+hw.lcd.density<span class="o">=</span>240
+vm.heapSize<span class="o">=</span>24
+hw.ramSize<span class="o">=</span>256
+</code></pre></div>
+
+
+<p>Now if its a new project, you can bootstrap one by using something like:</p>
+
+<div class="highlight"><pre><code class="bash">android create project --name HelloWorld --activity HelloWorld --path ./
+--package com.examples.helloworld --target 1
+</code></pre></div>
+
+
+<p>If you already have an Eclipse build project and you want to start doing it
+right. Set it up using <code>android update project --target 1 --path .</code></p>
+
+<p>Now you can build it using <code>ant debug</code> or <code>ant release</code> and corresponding
+<code>.apk</code> file will be created.</p>
+
+<h1>Running in the emulator</h1>
+
+<p>Lets start up the avd that we created before. Assuming, you named your project
+&ldquo;awesome&rdquo;, we can start the emulator <code>emulator -avd awesome</code>.</p>
+
+<p>Now we can install the above built packager using the <code>Android Debug Bridge or
+adb</code> by running <code>adb install bin/awesome-debug.apk</code>.</p>
+
+<p>You should now see your new app in the applications list.</p>
+
+<h1>References</h1>
+
+<ul>
+<li><a href="http://developer.android.com/tools/building/building-cmdline.html">Android Developer Site</a></li>
+<li><a href="http://www.aplusbi.com/?p=164">http://www.aplusbi.com/?p=164</a></li>
+<li><a href="http://blog.standalonecode.com/?p=269">http://blog.standalonecode.com/?p=269</a></li>
+<li><a href="http://incise.org/android-development-on-the-command-line.html">http://incise.org/android-development-on-the-command-line.html</a></li>
+</ul>
+
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>

@@ -3,8 +3,6 @@ layout: post
 title: Amazon S3 bucket names - be very careful
 tags: [s3]
 ---
-{% include JB/setup %}
-
 As I am doing bunch of AWS related work, I create multiple buckets for testing purposes. Today, I created a bucket and by mistake chose the wrong region. Region matters as Paperclip generates the attachment url based on **s3_host_name**. If you access the S3 item with a different starting hostname, Amazon will give you redirection notice.
 
 After realising my mistake, I dropped the bucket and tried to create another one with the same name (using the correct region) and I get:

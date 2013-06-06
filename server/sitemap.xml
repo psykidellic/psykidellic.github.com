@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://zachholman.com</loc>
+    </url>
+    
+    
+    <url>
+        <loc>http://zachholman.com/posts/left</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/moving-to-zsh-from-bash</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/using-spellchecking-with-vim</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/using-tmux-to-copy-text-between-two-sessions</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/installing-and-developing-android-applications-on-command-line-in-os-x</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/one-terminal-to-rule-them-all</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/why-i-support-arsenal-germany-at-international-soccer</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/vim-redux-start-thinking-like-a-vimmer</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/power-of-vim-increment-argument-number-value-in-methods-calls</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/rsyslog-and-absence-of-varlogmessages-in-ubuntu</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/jekyll-eating-up-errors</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/rvm-rails31-capistrano-amazon-ec2</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/amazon-s3---careful-with-bucket-names</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/new-year-resolution-2012</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/sshfs-bad-io</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/setting-up-xmonad-and-fun-with-xinitrc-slash-xsession</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/big-changes-and-using-blogofile-with-github-and-bitbucket</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/finding-an-item-based-on-computed-value</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/blog-moved-to-blogofile-add-google-analytics</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/blog-moved-to-blogofile</loc>
+    </url>
+    
+    <url>
+        <loc>http://zachholman.com/posts/welcome-back</loc>
+    </url>
+    
+</urlset>

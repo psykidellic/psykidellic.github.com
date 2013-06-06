@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+      Moving to zsh from bash &ndash;
+    
+    Zach Holman
+  </title>
+
+  <meta name="author" content="Zach Holman" />
+  <meta name="description" content="A fantastic blog that is fantastic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link rel="stylesheet" href="/css/base.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/pygments.css" type="text/css" />
+  <link media="only screen and (max-device-width: 480px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link media="only screen and (device-width: 768px)" href="/css/mobile.css" type="text/css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/application.js"></script>
+</head>
+
+<body>
+  <section class="sidebar">
+    <a href="/">
+      <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=150" height="75" width="75" class="avatar" />
+    </a>
+
+    <section class="name">
+      <a href="/">
+        <span id="fname">Zach</span>
+        <span id="lname">Holman</span>
+      </a>
+    </section>
+
+    <section class="meta">
+      <a href="https://github.com/holman" target="_blank"><img src="/images/github.png" /></a>
+      <a href="https://twitter.com/holman" target="_blank"><img src="/images/twitter.png"></a>
+      <a href="/atom.xml"><img src="/images/rss.png" /></a>
+    </section>
+
+    <section class="sections">
+      <ul>
+        <li><a href="/about.html">about</a></li>
+        <li><a href="/">posts</a></li>
+      </ul>
+    </section>
+  </section>
+
+  <section class="content">
+  <h1>
+    <a href="/posts/moving-to-zsh-from-bash">Moving to zsh from bash</a>
+  </h1>
+
+  <section class="byline">
+    July  6, 2012
+  </section>
+
+  <p>Alright, after finally stalling it for years, I have finally moved to <code>zsh</code> from
+the old and trusted <code>bash</code>. I would have to say that I never ever used bash to
+its maximum power nor I would probably use the maximum features of <code>zsh</code>. But I
+wanted to see if <code>zsh</code> provides better features for normal to average user like
+me. Getting the defaults right is big win for me.</p>
+
+<p>Mac OS X comes with a pretty recent version of zsh so you can simply use it or
+if you like to be on bleeding edge, get it from brew (make sure its then added
+to <code>/etc/shells</code>). Change your default shell using <code>chsh</code>.</p>
+
+<h1>Improvements</h1>
+
+<ul>
+<li><em>Autocompletion</em> - Honestly, the autocompletion is just better. Showing me all
+the options as menu is awesome.</li>
+<li><em>Autosuggestion and autocorrection</em> - 90% of the time I have achieved right
+option from zsh. It even autocorrets/suggests aliases.</li>
+<li><em>Finding files</em> - No more complex <code>find</code> commands. All my searches for last
+week has been <code>ls **/prefix*</code>.</li>
+<li><em>Better movement between folders</em> - I have found that zsh does better
+completion of directories and when you want to go back one level up.</li>
+</ul>
+
+
+<h1>.oh-my-zsh</h1>
+
+<p>From <a href="https://github.com/robbyrussell/oh-my-zsh/">their site</a>:</p>
+
+<blockquote><p>A handful of functions, auto-complete helpers, and stuff that makes you shout…
+“OH MY ZSHELL!”</p></blockquote>
+
+<p>In short, its a collection of community plugins and options that should make
+your life easier from start but as with all great power comes great
+responsibility. Its really is double edged sword. On one hand, you get many
+readymade plugins and solutions that it will cover 99% of your work. On the
+other, it will be very magic when you cannot figure out why something is working
+or not working. E.g., I have tmux setup with <code>set-window-option -g
+automatic-rename off</code> but it was not working because zsh was updating the title.
+I had to spend some time on Google and finally a fine folk at <code>#tmux</code> pointed me
+to the right direction.</p>
+
+<h1>Conclusion</h1>
+
+<p>All in all, I like it and hopefully with more time spent with it, my command
+line environment is going to get better.</p>
+
+<p><strong>Further reading:</strong> One of these days, I am going to sit down and read through
+the <a href="http://www.bash2zsh.com/zsh_refcard/refcard.pdf">zsh cheatsheet</a>.</p>
+
+
+  <!-- TODO: bio here -->
+  <section class="meta">
+    <h3>Discussion, links, and tweets</h3>
+    <section class="copy">
+      <a href="https://twitter.com/holman" target="_blank">
+        <img src="http://gravatar.com/avatar/6f63cde8b16b035280ca615f621a6c8c?s=142" height="50" width="50" />
+      </a>
+
+      <p>
+        I'm a developer at GitHub. <a href="https://twitter.com/holman" target="_blank">Follow me on Twitter</a>;
+        you'll enjoy my tweets. I take care to carefully craft each one. Or at least aim to make
+        you giggle. Or offended. One of those two&mdash; I haven't decided which yet.
+      </p>
+
+      <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-via="holman">Tweet</a>
+      <a href="http://twitter.com/holman" class="twitter-follow-button" data-show-count="false">Follow @holman</a>
+      <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    </section>
+  </section>
+</section>
+</body>
+
+</html>
