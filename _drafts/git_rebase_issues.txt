@@ -1,0 +1,29 @@
+---
+categories: git
+date: 2011/10/18 18:55:00
+title: git rebase - needed a single revison and interactive rebase already started
+---
+Recently at work, I was doing a *git rebase* and it failed due to some reason. After manually fixing it, I ran: **git rebase --continue** and it throws up::
+
+	fatal: needed a single revison
+	
+After browsing through the docs and StackOverflow reading up, I figured the best way is to look for point before the rebase or at a state where you know its good::
+
+	git reflog #look for the record e.g. {HEAD}@4
+	git reset --hard {HEAD}@4
+	
+Then if you do::
+
+	git rebase --continue
+	
+and get::
+
+	Interactive rebase already started
+	
+the commands that worked for me::
+
+	git rebase -i --abort
+	git rebase --continue
+
+
+
