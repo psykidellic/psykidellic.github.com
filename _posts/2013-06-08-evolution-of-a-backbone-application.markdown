@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Evolution of a Backbone application"
-published: false
+published: true
 ---
 
 In my weekend free time, I moonlight as amateur Backbone application development
@@ -26,7 +26,18 @@ which may or not be unique to other people. My impression and thoughts:
   library and just bundle up various JS files using Rails "include" directive.
   This will eventually lead up to having multiple global objects which you
   definitely want to avoid.
-* Spend sometime to do a search on 
+* Spend sometime to do search on Bitbucket/GitHub to find a real world open
+  source application using Backbone. Just like Backbone itself, there are no
+  standard way on how you organize your modules/code files. During my search, I
+  was lucky to look into an example of
+  [Cojiro](https://github.com/netalab/cojiro) which led me to
+  backbone.boilerplate, whose structure I am using for our project.
+* (NOTE: This point is something that I need to try out myself but I believe it
+  pertinent to the problem in hand). Try to implement a small project (not the
+  TODO MVC thats there everywhere) in multiple frameworks (Amber.js and
+  Angular.js seems to be the more popular ones right now) to see how each one
+  works. Even if you dont end up using those frameworks in any real life
+  project, it will probably open up various other possibilities of improvements
+  about how you write your application.
 
-
-  asdh
+That's it for now.
