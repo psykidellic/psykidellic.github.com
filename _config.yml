@@ -8,3 +8,12 @@ description: something about everything
 twitter: psykidellic
 github: psykidellic
 avatar: http://www.gravatar.com/avatar/f3e232c0016e12bb9ee2dcf23d5f2fd3
+
+plugins: [jekyll-paginate-v2]
+
+# The values here represent the defaults if nothing is set
+pagination:
+  enabled: true
+  # How many objects per paginated page, used to be `paginate` (default: 0, means all)
+  per_page: 30
+

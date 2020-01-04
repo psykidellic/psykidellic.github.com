@@ -1,14 +1,31 @@
 ---
 layout: layout
 title: "Posts"
+pagination:
+  enabled: true
 ---
 
 <section class="content">
-  <ul class="listing">
-    {% for post in site.posts %}
-    <li>
-      <span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+    <ul class="listing">
+      {% for post in paginator.posts %}
+        <li>
+          <span>{{ post.date | date: "%B %e, %Y" }}</span> <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% if paginator.total_pages > 1 %}
+    <ul>
+      {% if paginator.previous_page %}
+      <li>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+      </li>
+      {% endif %}
+      {% if paginator.next_page %}
+      <li>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+      </li>
+      {% endif %}
+    </ul>
+    {% endif %}
 </section>
+
